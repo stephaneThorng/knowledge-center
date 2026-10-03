@@ -1,3 +1,148 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+/* =============================================================================
+ * Thème Catppuccin — accents typographiques et sobriété
+ *
+ * Reproduit le rendu du thème Catppuccin pour Obsidian afin que le site et
+ * Obsidian se ressemblent. Valeurs officielles :
+ *   https://github.com/catppuccin/obsidian   (theme.css)
+ *
+ *   gras        -> sapphire
+ *   italique    -> green
+ *   barré       -> maroon
+ *   titres      -> lavender (accent Catppuccin)
+ *   callouts    -> bordure fine, fond très discret (au lieu des couleurs
+ *                  Material très saturées par défaut dans Quartz)
+ * ============================================================================= */
+
+/* -----------------------------------------------------------------------------
+ * Palette sémantique — mode CLAIR (Catppuccin Latte)
+ * -------------------------------------------------------------------------- */
+:root {
+  --ctp-lavender: 114, 135, 253;
+  --ctp-sapphire: 32, 159, 181;
+  --ctp-green: 64, 160, 43;
+  --ctp-maroon: 230, 69, 83;
+  --ctp-blue: 30, 102, 245;
+  --ctp-sky: 4, 165, 229;
+  --ctp-teal: 23, 146, 153;
+  --ctp-yellow: 223, 142, 29;
+  --ctp-peach: 254, 100, 11;
+  --ctp-red: 210, 15, 57;
+  --ctp-mauve: 136, 57, 239;
+  --ctp-overlay1: 140, 143, 161;
+}
+
+/* -----------------------------------------------------------------------------
+ * Palette sémantique — mode SOMBRE (Catppuccin Mocha)
+ * -------------------------------------------------------------------------- */
+:root[saved-theme="dark"] {
+  --ctp-lavender: 180, 190, 254;
+  --ctp-sapphire: 116, 199, 236;
+  --ctp-green: 166, 227, 161;
+  --ctp-maroon: 235, 160, 172;
+  --ctp-blue: 137, 180, 250;
+  --ctp-sky: 137, 220, 235;
+  --ctp-teal: 148, 226, 213;
+  --ctp-yellow: 249, 226, 175;
+  --ctp-peach: 250, 179, 135;
+  --ctp-red: 243, 139, 168;
+  --ctp-mauve: 203, 166, 247;
+  --ctp-overlay1: 127, 132, 156;
+}
+
+/* -----------------------------------------------------------------------------
+ * Titres — accent lavender
+ * -------------------------------------------------------------------------- */
+
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  color: rgb(var(--ctp-lavender));
+}
+
+/* Les traits de séparation (---) reprennent l'accent, comme dans Obsidian */
+article hr {
+  border-color: rgba(var(--ctp-lavender), 0.35);
+}
+
+/* -----------------------------------------------------------------------------
+ * Emphase dans le texte — le « détail » du thème Catppuccin Obsidian
+ * -------------------------------------------------------------------------- */
+
+/* NOTE : Quartz neutralise volontairement le gras des paragraphes avec
+   `.page article p > strong { color: var(--dark) }` (plus spécifique que
+   `article strong`). On reprend la même spécificité, et comme ce fichier est
+   émis après base.scss, nos règles l'emportent. */
+article strong,
+article b,
+.page article p > strong,
+.page article p > b {
+  color: rgb(var(--ctp-sapphire));
+  font-weight: 600;
+}
+
+article em,
+article i {
+  color: rgb(var(--ctp-green));
+}
+
+article del,
+article s {
+  color: rgb(var(--ctp-maroon));
+}
+
+/* -----------------------------------------------------------------------------
+ * Callouts — plus sobres : bordure fine, fond presque neutre
+ * -------------------------------------------------------------------------- */
+
+.callout {
+  border: 1px solid rgba(var(--callout-rgb, var(--ctp-overlay1)), 0.3);
+  background-color: rgba(var(--callout-rgb, var(--ctp-overlay1)), 0.035);
+  padding: 0.25rem 1rem;
+}
+
+/* Couleurs Catppuccin par type (Quartz utilise par défaut la palette Material) */
+.callout[data-callout]                { --callout-rgb: var(--ctp-blue); }
+.callout[data-callout="note"]         { --callout-rgb: var(--ctp-blue); }
+.callout[data-callout="abstract"]     { --callout-rgb: var(--ctp-lavender); }
+.callout[data-callout="info"],
+.callout[data-callout="todo"]         { --callout-rgb: var(--ctp-sky); }
+.callout[data-callout="tip"]          { --callout-rgb: var(--ctp-teal); }
+.callout[data-callout="success"]      { --callout-rgb: var(--ctp-green); }
+.callout[data-callout="question"]     { --callout-rgb: var(--ctp-yellow); }
+.callout[data-callout="warning"]      { --callout-rgb: var(--ctp-peach); }
+.callout[data-callout="failure"],
+.callout[data-callout="danger"]       { --callout-rgb: var(--ctp-red); }
+.callout[data-callout="bug"]          { --callout-rgb: var(--ctp-maroon); }
+.callout[data-callout="example"]      { --callout-rgb: var(--ctp-mauve); }
+.callout[data-callout="quote"]        { --callout-rgb: var(--ctp-overlay1); }
+
+/* Titre et icône du callout dans la couleur du type */
+.callout > .callout-title-inner > p {
+  color: rgb(var(--callout-rgb, var(--ctp-overlay1)));
+}
+
+.callout .callout-icon,
+.callout .fold-callout-icon {
+  background-color: rgb(var(--callout-rgb, var(--ctp-overlay1)));
+}
+
+/* -----------------------------------------------------------------------------
+ * Étiquettes (tags) — texte coloré simple, sans pastille pleine
+ * -------------------------------------------------------------------------- */
+
+a.tag-link,
+a.internal.tag-link {
+  background-color: transparent;
+  border: 1px solid rgba(var(--ctp-lavender), 0.3);
+  color: rgb(var(--ctp-lavender));
+}
+
+a.tag-link:hover,
+a.internal.tag-link:hover {
+  background-color: rgba(var(--ctp-lavender), 0.1);
+}
