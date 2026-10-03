@@ -1,0 +1,24 @@
+# --- Obsidian ---
+# Configuration locale : réglages propres à chaque machine, à ne pas versionner
+.obsidian/
+
+# --- Fichiers temporaires / système ---
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.swp
+*~
+
+# --- Dossiers hors documentation ---
+# music_project est conservé localement (Obsidian) mais pas publié
+music_project/
+
+# --- Notes internes (non publiques) ---
+# Cahier des charges / notes de travail, conservés localement
+IDEA.md
+
+# --- Outils (Quartz) ---
+node_modules/
+.quartz-cache/
+public/
