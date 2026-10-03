@@ -30,28 +30,27 @@ jobs:
           cache: npm
           cache-dependency-path: quartz/package-lock.json
 
-      # Assemble le contenu du site : la page d'accueil + TOUS les dossiers
-      # de domaines (detection automatique), sauf ceux de la liste d'exclusion.
+      # Assemble le contenu du site : TOUT ce qui est dans docs/ est publie
+      # (page d'accueil + un dossier par domaine, detection automatique).
       - name: Prepare content
         run: |
           set -euo pipefail
           CONTENT="quartz/content"
+          EXCLUDE=(.obsidian .git private templates)
+
           rm -rf "$CONTENT"
           mkdir -p "$CONTENT"
 
-          # Page d'accueil du site
-          cp index.md "$CONTENT/index.md"
-
-          # Dossiers exclus du site (moteur, outillage, notes internes, local)
-          EXCLUDE="^(quartz|\.git|\.github|\.obsidian|music_project|node_modules|public)$"
-
-          for d in */; do
-            name="${d%/}"
-            if [[ "$name" =~ $EXCLUDE ]]; then
+          shopt -s dotglob nullglob
+          for f in docs/*; do
+            name="$(basename "$f")"
+            skip=0
+            for x in "${EXCLUDE[@]}"; do [[ "$name" == "$x" ]] && skip=1; done
+            if [[ $skip -eq 1 ]]; then
               echo "  exclu    : $name"
               continue
             fi
-            cp -r "$name" "$CONTENT/"
+            cp -r "$f" "$CONTENT/"
             echo "  publie   : $name"
           done
 

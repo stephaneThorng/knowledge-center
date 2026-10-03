@@ -3,13 +3,12 @@
 # prepare-content.sh — Assemble le contenu du site pour un build LOCAL
 #
 # Reproduit exactement ce que fait le workflow GitHub Actions :
-#   - copie la page d'accueil (index.md)
-#   - copie TOUS les dossiers de domaines (detection automatique)
-#   - sauf ceux de la liste d'exclusion
+#   tout ce qui est dans docs/ est publie (page d'accueil + un dossier
+#   par domaine, detection automatique), sauf la liste d'exclusion.
 #
 # Usage :
-#   ./prepare-content.sh              # assemble le contenu
-#   cd quartz && npx quartz build --serve   # puis lance le site en local
+#   ./prepare-content.sh
+#   cd quartz && node ./quartz/bootstrap-cli.mjs build --serve
 # =============================================================================
 
 set -euo pipefail
@@ -21,20 +20,19 @@ echo "Preparation du contenu..."
 rm -rf "$CONTENT"
 mkdir -p "$CONTENT"
 
-# Page d'accueil du site
-cp "$ROOT/index.md" "$CONTENT/index.md"
+# Dossiers de docs/ non publies
+EXCLUDE=(.obsidian .git private templates)
 
-# Dossiers exclus du site (moteur, outillage, notes internes, local)
-EXCLUDE="^(quartz|\.git|\.github|\.obsidian|music_project|node_modules|public)$"
-
-cd "$ROOT"
-for d in */; do
-  name="${d%/}"
-  if [[ "$name" =~ $EXCLUDE ]]; then
+shopt -s dotglob nullglob
+for f in "$ROOT"/docs/*; do
+  name="$(basename "$f")"
+  skip=0
+  for x in "${EXCLUDE[@]}"; do [[ "$name" == "$x" ]] && skip=1; done
+  if [[ $skip -eq 1 ]]; then
     echo "  exclu    : $name"
     continue
   fi
-  cp -r "$name" "$CONTENT/"
+  cp -r "$f" "$CONTENT/"
   echo "  publie   : $name"
 done
 
