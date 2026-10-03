@@ -21,7 +21,7 @@ IDEA.md
 # --- Outils (Quartz, moteur du site) ---
 quartz/node_modules/
 quartz/public/
-quartz/.quartz-cache/
+.quartz-cache/          # cache de build (a n'importe quel niveau)
 quartz/tsconfig.tsbuildinfo
 quartz/prof/
 
