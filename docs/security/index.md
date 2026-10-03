@@ -1,6 +1,6 @@
 ---
-title: Security (MOC)
-aliases: [MOC Sécurité, Carte sécurité, Index sécurité, Sécurité MOC]
+title: Security
+aliases: [Index sécurité]
 tags: [securite, moc, index, navigation]
 domaine: securite
 niveau: intermediaire
@@ -9,8 +9,7 @@ cree: 2026-10-01
 sources: [NIST SP 800-63, NIST SP 800-207, OASIS SAML 2.0, OpenID Connect Core 1.0]
 ---
 
-# Security (MOC)
-
+# Security
 > [!abstract] Ancre
 > Carte d'entrée du domaine **sécurité**, organisée en trois dossiers : les protocoles d'identité modernes (`oidc/`), le protocole historique (`saml/`), et le domaine complet de gestion des identités (`iam/`).
 

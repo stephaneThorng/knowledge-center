@@ -94,6 +94,8 @@ const config: QuartzConfig = {
       Plugin.Assets(),
       Plugin.Static(),
       Plugin.Favicon(),
+      // PWA : site installable + consultation hors-ligne
+      Plugin.PWA(),
       Plugin.NotFoundPage(),
       // Désactivé : ralentit fortement le build
       // Plugin.CustomOgImages(),

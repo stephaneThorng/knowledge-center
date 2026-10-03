@@ -302,7 +302,7 @@ Host: auth.example.com
 - [[oauth2]] — la notion de scope d'autorisation.
 - [[prompts_and_interaction]] — piloter l'affichage des écrans de consentement.
 - [[sso_session_and_consent]] — ce que le consentement enregistre, et pour qui.
-- [[oidc/index]] — carte d'entrée du dossier.
+- [[index]] — carte d'entrée du dossier.
 
 ## Références
 

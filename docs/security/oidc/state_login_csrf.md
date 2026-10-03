@@ -270,7 +270,7 @@ Le state est ensuite **invalidé** (usage unique) pour qu'une seconde réponse n
 - [[id_token]] — validé avec le `nonce`, cousin du `state` côté identité.
 - [[oauth2]] — le protocole-cadre (RFC 6749 §4.1.1 et §10.12).
 - [[security_oauth21]] — les durcissements recommandés (RFC 9700, RFC 6819).
-- [[oidc/index]] — carte d'entrée du dossier.
+- [[index]] — carte d'entrée du dossier.
 
 ## Références
 

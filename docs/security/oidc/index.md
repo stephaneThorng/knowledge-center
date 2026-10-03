@@ -1,6 +1,6 @@
 ---
-title: OIDC (MOC)
-aliases: [MOC OIDC, Carte OIDC, Index OIDC, Map of Content OIDC]
+title: OIDC
+aliases: [Index OIDC, Map of Content OIDC]
 tags: [oidc, moc, index, navigation]
 domaine: securite/oidc
 niveau: intermediaire
@@ -9,8 +9,7 @@ cree: 2026-10-01
 sources: [OpenID Connect Core 1.0, RFC 6749, RFC 9700]
 ---
 
-# OIDC (MOC)
-
+# OIDC
 > [!abstract] Ancre
 > Carte d'entrée du domaine **sécurité / OIDC** : par où commencer, dans quel ordre lire, et où trouver chaque notion.
 

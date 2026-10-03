@@ -374,7 +374,7 @@ tls_client_auth_certificate_sha256: "bwcK0esc3ACC3DB2Y5_lESsXE8o9ltc05O89jdN-dg2
 - [[discovery_and_jwks]] — où sont annoncées les méthodes d'authentification client et le support du `cnf`.
 - [[jwt]] — le format qui porte le claim `cnf`.
 - [[openid_connect]] — le cadre des échanges client↔OP.
-- [[oidc/index]] — carte d'entrée du dossier.
+- [[index]] — carte d'entrée du dossier.
 
 ## Références
 

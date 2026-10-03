@@ -339,7 +339,7 @@ Manquer l'étape **5** est l'erreur la plus répandue — et c'est celle qui cr�
 - [[discovery_and_jwks]] — la vérification de signature du `logout_token`.
 - [[prompts_and_interaction]] — `prompt=none` comme détection de session morte.
 - [[access_token]] — pourquoi un jeton reste valide jusqu'à son `exp`.
-- [[oidc/index]] — carte d'entrée du dossier.
+- [[index]] — carte d'entrée du dossier.
 
 ## Références
 

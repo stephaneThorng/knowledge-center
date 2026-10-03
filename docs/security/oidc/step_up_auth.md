@@ -386,7 +386,7 @@ Host: auth.example.com
 - [[discovery_and_jwks]] — les valeurs supportées et la vérification de signature.
 - [[security_oauth21]] — FAPI, eIDAS et les exigences sectorielles.
 - [[openid_connect]] — la couche qui définit ces claims.
-- [[oidc/index]] — carte d'entrée du dossier.
+- [[index]] — carte d'entrée du dossier.
 
 ## Références
 

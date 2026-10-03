@@ -1,6 +1,6 @@
 ---
-title: IAM (MOC)
-aliases: [MOC IAM, Carte IAM, Index IAM, Identity and Access Management]
+title: IAM
+aliases: [Index IAM, Identity and Access Management]
 tags: [iam, moc, index, navigation, identite, autorisation]
 domaine: securite/iam
 niveau: intermediaire
@@ -9,8 +9,7 @@ cree: 2026-10-01
 sources: [NIST SP 800-63, NIST SP 800-162, OASIS SCIM 2.0, OASIS SAML 2.0, OpenID Connect Core 1.0]
 ---
 
-# IAM (MOC)
-
+# IAM
 > [!abstract] Ancre
 > Carte d'entrée du domaine **IAM** (*Identity and Access Management*) : gérer les identités et leurs accès — bien au-delà du protocole d'authentification.
 
@@ -29,7 +28,7 @@ sources: [NIST SP 800-63, NIST SP 800-162, OASIS SCIM 2.0, OASIS SAML 2.0, OpenI
 >
 > 🔑 **L'analogie :** le protocole, c'est **la serrure de ta porte**. L'IAM, c'est **tout le service de sécurité de l'immeuble** : les badges, les registres, les niveaux d'accès, les arrivées et les départs, les caméras.
 
-**Les mots à connaître pour cette MOC :**
+**Les mots à connaître :**
 
 | Mot technique | En clair |
 |---|---|
@@ -120,8 +119,8 @@ securite/
 - [[openid_connect]] — le protocole moderne, une **brique** de l'IAM.
 - [[saml2]] — le protocole historique, une **autre brique**.
 - [[saml_vs_oidc]] — comment choisir, et pourquoi les deux coexistent.
-- [[oidc/index]] — carte d'entrée du domaine protocole moderne.
-- [[saml/index]] — carte d'entrée du domaine protocole historique.
+- [[../oidc/index]] — carte d'entrée du domaine protocole moderne.
+- [[../saml/index]] — carte d'entrée du domaine protocole historique.
 - [[../index]] — la carte générale du domaine sécurité.
 
 ## Références

@@ -52,7 +52,7 @@ Voir aussi : [[state_login_csrf]] (le numéro de suivi) et [[pkce]] (le cadenas)
 >
 > 🔧 **Le mot technique :** ce mécanisme s'appelle le **Authorization Code Flow** (*flow du code d'autorisation*).
 
-Le **Authorization Code Flow** (flow « code d'autorisation ») est le mode d'obtention de tokens défini par [[oauth2]] (RFC 6749 §4.1) où le client obtient d'abord un **code d'autorisation** opaque et de courte durée, qu'il échange ensuite contre des tokens sur un canal direct avec le serveur d'autorisation. C'est le flow sous-jacent de [[openid_connect]] : l'ID Token ne peut être délivré que par ce chemin ou par le Device Authorization Flow (vue d'ensemble du domaine : [[oidc/index]]).
+Le **Authorization Code Flow** (flow « code d'autorisation ») est le mode d'obtention de tokens défini par [[oauth2]] (RFC 6749 §4.1) où le client obtient d'abord un **code d'autorisation** opaque et de courte durée, qu'il échange ensuite contre des tokens sur un canal direct avec le serveur d'autorisation. C'est le flow sous-jacent de [[openid_connect]] : l'ID Token ne peut être délivré que par ce chemin ou par le Device Authorization Flow (vue d'ensemble du domaine : [[index]]).
 
 ---
 

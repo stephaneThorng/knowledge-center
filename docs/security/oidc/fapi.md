@@ -359,7 +359,7 @@ Sans la clé privée, l'attaquant échoue à la **première** vérification de l
 - [[logout]] — la session, que FAPI ne couvre pas mais qui reste critique.
 - [[token_exchange]] — la délégation d'identité entre acteurs financiers.
 - [[jwt]] — les algorithmes asymétriques et la signature des requêtes (JAR/JARM).
-- [[oidc/index]] — carte d'entrée du dossier.
+- [[index]] — carte d'entrée du dossier.
 
 ## Références
 

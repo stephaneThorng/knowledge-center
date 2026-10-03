@@ -247,7 +247,7 @@ Avec `alg` et `kid`, le RP sait quelle clé demander à `jwks_uri` ; avec `aud`,
 - [[authorization_code_flow]] — flow principal de délivrance.
 - [[pkce]] — protège le `code`, donc l'ID Token qui en découle.
 - [[security_oauth21]] — bonnes pratiques de validation.
-- [[oidc/index]] — carte d'ensemble du domaine.
+- [[index]] — carte d'ensemble du domaine.
 
 ## Références
 - OpenID Connect Core 1.0 — §2 (ID Token), §3.1.3.6, §3.1.3.7 (ID Token Validation), §5.1 (Standard Claims).

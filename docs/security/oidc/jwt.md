@@ -228,7 +228,7 @@ Rien n'est chiffré : `sub` et `email` seraient en clair dans un log. Les [[clie
 - [[dpop]] — un JWT de preuve (`dpop+jwt`) signé à chaque requête.
 - [[mtls]] — le claim `cnf` (`x5t#S256`) qui lie un jeton à un certificat.
 - [[flows_comparison]] — quels flows émettent des JWT.
-- [[oidc/index]] — carte d'entrée du dossier.
+- [[index]] — carte d'entrée du dossier.
 
 ## Références
 - **RFC 7519** — JSON Web Token (JWT), M. Jones et al., 2015.

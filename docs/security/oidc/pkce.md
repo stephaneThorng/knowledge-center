@@ -258,7 +258,7 @@ Le serveur recalcule `E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM` et le retrouv
 - [[device_authorization_flow]] — PKCE recommandé à son échange.
 - [[client_credentials_flow]] — hors périmètre de PKCE.
 - [[security_oauth21]] — RFC 9700 et durcissements.
-- [[oidc/index]] — carte d'entrée du dossier.
+- [[index]] — carte d'entrée du dossier.
 
 ## Références
 - **RFC 7636** — Proof Key for Code Exchange, Sakimura et al., 2015 (§4.1 verifier, §4.2 challenge, §4.6 vérification, Annexe B).

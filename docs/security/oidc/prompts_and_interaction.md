@@ -358,7 +358,7 @@ L'utilisateur voit : **le sélecteur de comptes**, champ **pré-rempli** avec `a
 - [[pkce]] — la vraie protection du flux (que ces paramètres ne remplacent pas).
 - [[state_login_csrf]] — la protection de corrélation, indépendante de `prompt`.
 - [[flows_comparison]] — pourquoi `response_mode=fragment` renvoie à Implicit.
-- [[oidc/index]] — carte d'entrée du dossier.
+- [[index]] — carte d'entrée du dossier.
 
 ## Références
 

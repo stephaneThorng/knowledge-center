@@ -422,7 +422,7 @@ L'IdP renvoie une **page HTML** contenant un formulaire auto-soumis :
 - [[state_login_csrf]] — le rôle de corrélation, joué par `RelayState` / `InResponseTo` en SAML.
 - [[sso_session_and_consent]] — ce que le SP fait de l'assertion (sa session).
 - [[mtls]] — autre usage du même nom : certificat pour `X509` dans les classes d'authentification.
-- [[saml/index]] — carte d'entrée du domaine.
+- [[index]] — carte d'entrée du domaine.
 
 ## Références
 

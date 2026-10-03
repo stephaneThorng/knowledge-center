@@ -379,7 +379,7 @@ Résultat : 200 OK
 - [[authorization_code_flow]] — le flow où le jeton DPoP est obtenu.
 - [[security_oauth21]] — la RFC 9700 et la fin du Bearer nu.
 - [[client_credentials_flow]] — un grant qui peut aussi émettre des jetons DPoP.
-- [[oidc/index]] — carte d'entrée du dossier.
+- [[index]] — carte d'entrée du dossier.
 
 ## Références
 

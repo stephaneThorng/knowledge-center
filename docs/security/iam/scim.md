@@ -44,7 +44,7 @@ sources: [RFC 7643, RFC 7644, NIST SP 800-53, OASIS SAML 2.0]
 | **JML** | *Joiner / Mover / Leaver* : arrivée, changement, départ |
 | **mapping d'attributs** | la **traduction** entre les champs du modèle et ceux de l'appli |
 
-Voir aussi : [[auth_workflows]] (ce qui se passe à la connexion) et [[iam/index]].
+Voir aussi : [[auth_workflows]] (ce qui se passe à la connexion) et [[index]].
 
 ---
 
@@ -431,7 +431,7 @@ Et EN PLUS (hors SCIM, mais indispensable) :
 - [[refresh_token]] — à révoquer explicitement au départ d'un utilisateur.
 - [[saml2]] — le protocole souvent couplé à SCIM dans le monde de l'entreprise.
 - [[openid_connect]] — le protocole moderne qui consomme les comptes créés par SCIM.
-- [[iam/index]] — carte d'entrée du domaine.
+- [[index]] — carte d'entrée du domaine.
 - [[access_token]] — le jeton dont l'expiration limite (imparfaitement) la fenêtre résiduelle.
 
 ## Références

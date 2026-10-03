@@ -230,7 +230,7 @@ Le RP vérifie la signature via la JWKS, contrôle `iss`, `aud`, `exp` et le `no
 - [[fapi]] — le profil sectoriel qui durcit OIDC pour la finance.
 - [[flows_comparison]] — choisir entre code, implicit et hybrid.
 - [[jwt]] — format et validation de l'ID Token.
-- [[oidc/index]] — carte de navigation du domaine.
+- [[index]] — carte de navigation du domaine.
 
 ## Références
 

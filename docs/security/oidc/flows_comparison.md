@@ -225,7 +225,7 @@ Voir [[security_oauth21]] pour le détail, et [[pkce]] pour la protection centra
 - [[oauth2]] — le cadre et ses quatre grants fondateurs.
 - [[security_oauth21]] — les dépréciations et les exigences actuelles.
 - [[openid_connect]] — le flow qui délivre l'identité.
-- [[oidc/index]] — carte d'entrée du dossier.
+- [[index]] — carte d'entrée du dossier.
 
 ## Références
 

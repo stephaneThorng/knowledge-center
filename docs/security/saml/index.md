@@ -1,6 +1,6 @@
 ---
-title: SAML (MOC)
-aliases: [MOC SAML, Carte SAML, Index SAML, SAML 2.0 index]
+title: SAML
+aliases: [Index SAML, SAML 2.0 index]
 tags: [saml, moc, index, navigation, federation]
 domaine: securite/saml
 niveau: intermediaire
@@ -9,8 +9,7 @@ cree: 2026-10-01
 sources: [SAML 2.0 Core, SAML 2.0 Bindings, SAML 2.0 Profiles]
 ---
 
-# SAML (MOC)
-
+# SAML
 > [!abstract] Ancre
 > Carte d'entrée du domaine **SAML 2.0** : le protocole de fédération d'identité le plus déployé en entreprise, et le **prédécesseur** d'[[openid_connect]].
 

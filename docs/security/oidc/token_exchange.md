@@ -409,7 +409,7 @@ grant_type=urn:ietf:params:oauth:grant-type:token-exchange
 - [[refresh_token]] — à ne pas confondre avec l'échange.
 - [[scopes_and_claims]] — ce que le `scope` réduit signifie concrètement.
 - [[logout]] — la révocation, qui coupe aussi les jetons échangés.
-- [[oidc/index]] — carte d'entrée du dossier.
+- [[index]] — carte d'entrée du dossier.
 
 ## Références
 

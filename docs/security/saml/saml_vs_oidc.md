@@ -295,7 +295,7 @@ Voir aussi : [[saml2]] et [[openid_connect]].
 - [[state_login_csrf]] — ce que `RelayState` joue côté SAML.
 - [[step_up_auth]] — l'équivalent de `AuthnContextClassRef`.
 - [[flows_comparison]] — le choix des flows, côté OIDC.
-- [[saml/index]] — carte d'entrée du domaine.
+- [[index]] — carte d'entrée du domaine.
 
 ## Références
 

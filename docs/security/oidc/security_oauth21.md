@@ -252,7 +252,7 @@ Puis, côté client : **signature vérifiée** via la JWKS de l'`issuer` épingl
 - [[flows_comparison]] — les dépréciations, flow par flow.
 - [[oauth2]] — le socle, et son historique vers 2.1.
 - [[openid_connect]] — les pièges propres à la couche identité.
-- [[oidc/index]] — carte d'entrée du dossier.
+- [[index]] — carte d'entrée du dossier.
 
 ## Références
 

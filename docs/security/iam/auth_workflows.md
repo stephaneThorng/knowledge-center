@@ -346,8 +346,8 @@ flowchart TD
 - [[openid_connect]] — un des protocoles qui transporte le résultat du workflow.
 - [[saml2]] — l'autre protocole, avec `AuthnContextClassRef`.
 - [[rbac_abac_rebac]] — une fois authentifié, à quoi a-t-on droit ?
-- [[iam/index]] — carte d'entrée du domaine.
-- [[oidc/index]] — carte d'entrée du domaine protocole.
+- [[index]] — carte d'entrée du domaine.
+- [[../oidc/index]] — carte d'entrée du domaine protocole.
 
 ## Références
 

@@ -270,7 +270,7 @@ Le client cherche `kid: "2026-09-01-a1b2"` dans ce tableau, reconstruit la clé 
 - [[pkce]] — `code_challenge_methods_supported` annonce `S256`.
 - [[authorization_code_flow]] — où s'insèrent ces vérifications.
 - [[security_oauth21]] — substitutions d'issuer, algorithmes, durcissements.
-- [[oidc/index]] — carte d'entrée du dossier.
+- [[index]] — carte d'entrée du dossier.
 
 ## Références
 

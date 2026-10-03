@@ -250,7 +250,7 @@ Appel de l'API : `GET https://api.example.com/contacts` avec l'en-tête `Authori
 ---
 
 ## Voir aussi
-- [[oidc/index]] — point d'entrée de la thématique sécurité/OIDC.
+- [[index]] — point d'entrée de la thématique sécurité/OIDC.
 - [[openid_connect]] — couche d'authentification au-dessus d'OAuth 2.0.
 - [[authorization_code_flow]] — le grant de référence avec utilisateur.
 - [[pkce]] — extension obligatoire pour les clients publics.

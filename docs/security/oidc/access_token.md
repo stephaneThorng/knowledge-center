@@ -240,7 +240,7 @@ L'API vérifie la signature (JWKS de l'issuer), puis `aud == https://api.example
 - [[dpop]] — lier le jeton à une paire de clés (`cnf.jkt`), signée à chaque requête.
 - [[fapi]] — le profil sectoriel qui impose une preuve de possession.
 - [[token_exchange]] — obtenir un jeton destiné à l'API suivante (chaîne de services).
-- [[oidc/index]] — carte d'entrée du dossier.
+- [[index]] — carte d'entrée du dossier.
 
 ## Références
 

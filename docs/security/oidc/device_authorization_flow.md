@@ -271,7 +271,7 @@ C'est le flow utilisé par `gh auth login`, les applications de streaming sur TV
 - [[refresh_token]] — souvent émis, pour éviter de refaire le flow.
 - [[flows_comparison]] — choisir entre code, device et client credentials.
 - [[security_oauth21]] — usages abusifs et durcissements.
-- [[oidc/index]] — carte d'entrée du dossier.
+- [[index]] — carte d'entrée du dossier.
 
 ## Références
 

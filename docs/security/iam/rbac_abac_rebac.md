@@ -40,7 +40,7 @@ sources: [NIST SP 800-162, NIST SP 800-207, NIST RBAC, Google Zanzibar, OASIS XA
 | **PEP** | **qui applique** la décision (*Policy Enforcement Point*) |
 | **PIP** | **qui fournit les données** de la décision (*Policy Information Point*) |
 
-Voir aussi : [[scopes_and_claims]] (la permission côté OAuth) et [[iam/index]].
+Voir aussi : [[scopes_and_claims]] (la permission côté OAuth) et [[index]].
 
 ---
 
@@ -344,7 +344,7 @@ PERMIT (sujet, action, ressource)
 - [[scopes_and_claims]] — la permission grossière portée par un jeton OAuth.
 - [[access_token]] — ce que le jeton autorise côté API, et ses limites.
 - [[sso_session_and_consent]] — ce que porte la session, distinct des permissions.
-- [[iam/index]] — carte d'entrée du domaine.
+- [[index]] — carte d'entrée du domaine.
 - [[openid_connect]] — comment les attributs (rôles) arrivent dans les *claims*.
 - [[saml2]] — les attributs dans l'assertion (`AttributeStatement`).
 

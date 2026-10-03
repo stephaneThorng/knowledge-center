@@ -86,6 +86,21 @@ export default (() => {
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
 
+        {/* PWA : manifest, couleur de theme et icone Apple */}
+        <link rel="manifest" href={joinSegments(baseDir, "manifest.webmanifest")} />
+        <meta name="theme-color" content="#1e1e2e" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content={cfg.pageTitle} />
+        <link rel="apple-touch-icon" href={joinSegments(baseDir, "static/icon-192x192.png")} />
+
+        {/* Enregistrement du service worker (hors-ligne) */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("${joinSegments(baseDir, "service-worker.js")}",{scope:"${joinSegments(baseDir, "/")}"}).catch(function(e){console.warn("SW non enregistre",e)})})}`,
+          }}
+        />
+
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
           .filter((resource) => resource.loadTime === "beforeDOMReady")

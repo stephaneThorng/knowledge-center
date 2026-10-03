@@ -239,7 +239,7 @@ L'ancien `8xLOxBtZp8` est désormais **invalide**. S'il réapparaît un jour, l'
 - [[security_oauth21]] — rotation, réutilisation, durcissements RFC 9700.
 - [[logout]] — révocation indispensable après une déconnexion.
 - [[flows_comparison]] — quels flux peuvent en émettre.
-- [[oidc/index]] — carte d'entrée du dossier.
+- [[index]] — carte d'entrée du dossier.
 
 ## Références
 

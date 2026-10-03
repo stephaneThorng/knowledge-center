@@ -232,7 +232,7 @@ L'API vérifie la signature, l'audience et le scope. Elle sait que l'appelant es
 - [[security_oauth21]] — gestion des secrets, `private_key_jwt`, mTLS.
 - [[mtls]] — authentification du client par certificat, sans secret partagé.
 - [[fapi]] — le profil qui l'impose pour les échanges financiers.
-- [[oidc/index]] — carte d'entrée du dossier.
+- [[index]] — carte d'entrée du dossier.
 
 ## Références
 

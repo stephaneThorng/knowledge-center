@@ -302,7 +302,7 @@ Pourquoi c'est ainsi :
 - [[access_token]] — pourquoi les jetons ne s'écrasent pas entre applications (`aud`).
 - [[scopes_and_claims]] — ce que le consentement autorise exactement.
 - [[openid_connect]] — la couche qui définit session et consentement.
-- [[oidc/index]] — carte d'entrée du dossier.
+- [[index]] — carte d'entrée du dossier.
 
 ## Références
 
