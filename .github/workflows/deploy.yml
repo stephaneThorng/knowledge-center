@@ -1,0 +1,83 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # historique complet (dates de modification)
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: quartz/package-lock.json
+
+      # Assemble le contenu du site : la page d'accueil + TOUS les dossiers
+      # de domaines (detection automatique), sauf ceux de la liste d'exclusion.
+      - name: Prepare content
+        run: |
+          set -euo pipefail
+          CONTENT="quartz/content"
+          rm -rf "$CONTENT"
+          mkdir -p "$CONTENT"
+
+          # Page d'accueil du site
+          cp index.md "$CONTENT/index.md"
+
+          # Dossiers exclus du site (moteur, outillage, notes internes, local)
+          EXCLUDE="^(quartz|\.git|\.github|\.obsidian|music_project|node_modules|public)$"
+
+          for d in */; do
+            name="${d%/}"
+            if [[ "$name" =~ $EXCLUDE ]]; then
+              echo "  exclu    : $name"
+              continue
+            fi
+            cp -r "$name" "$CONTENT/"
+            echo "  publie   : $name"
+          done
+
+          echo "----------------------------------------"
+          echo "Fichiers Markdown publies : $(find "$CONTENT" -name '*.md' | wc -l)"
+
+      - name: Install dependencies
+        working-directory: quartz
+        run: npm ci
+
+      - name: Build site
+        working-directory: quartz
+        run: npx quartz build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: quartz/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

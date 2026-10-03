@@ -1,0 +1,33 @@
+# =============================================================================
+# Normalisation des fins de ligne
+#
+# Windows utilise CRLF, Linux (GitHub Actions) utilise LF.
+# Un script shell en CRLF echoue sous Linux ("bad interpreter").
+# On force donc LF pour tout ce qui est execute ou interprete.
+# =============================================================================
+
+# Par defaut : detection automatique, normalisation vers LF dans le depot
+* text=auto eol=lf
+
+# Scripts shell : TOUJOURS en LF (sinon echec sous Linux)
+*.sh text eol=lf
+
+# Fichiers de configuration et workflows : LF
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.ts text eol=lf
+
+# Markdown : LF
+*.md text eol=lf
+
+# Binaires : ne pas toucher
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.pdf binary

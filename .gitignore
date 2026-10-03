@@ -18,7 +18,13 @@ music_project/
 # Cahier des charges / notes de travail, conservés localement
 IDEA.md
 
-# --- Outils (Quartz) ---
-node_modules/
-.quartz-cache/
-public/
+# --- Outils (Quartz, moteur du site) ---
+quartz/node_modules/
+quartz/public/
+quartz/.quartz-cache/
+quartz/tsconfig.tsbuildinfo
+quartz/prof/
+
+# Contenu assemblé au build (généré par .github/workflows/deploy.yml
+# ou par ./prepare-content.sh en local) — jamais versionné
+quartz/content/
