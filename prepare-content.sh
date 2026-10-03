@@ -42,4 +42,4 @@ echo "----------------------------------------"
 echo "Fichiers Markdown publies : $(find "$CONTENT" -name '*.md' | wc -l)"
 echo
 echo "Pour lancer le site en local :"
-echo "  cd quartz && npx quartz build --serve"
+echo "  cd quartz && node ./quartz/bootstrap-cli.mjs build --serve"

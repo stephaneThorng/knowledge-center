@@ -64,7 +64,9 @@ jobs:
 
       - name: Build site
         working-directory: quartz
-        run: npx quartz build
+        # On appelle node explicitement : le bit executable n'est pas
+        # conserve par Git, donc "npx quartz" echouerait sous Linux.
+        run: node ./quartz/bootstrap-cli.mjs build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
