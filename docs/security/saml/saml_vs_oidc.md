@@ -286,6 +286,25 @@ Voir aussi : [[saml2]] et [[openid_connect]].
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« SAML ou OIDC, lequel choisir ? »** | « Projet **neuf** → **OIDC**. Parc existant → on **garde SAML** et on gravite autour. Les deux **coexistent**. » |
+| **« OIDC est-il "SAML en mieux" ? »** | « **Non** : deux philosophies. SAML = **tout par le navigateur** (la preuve circule) ; OIDC = **deux canaux** (un code inutile en public). » |
+| **« Pourquoi OIDC a-t-il un modèle plus sûr ? »** | « La cible de l'attaque est **déplacée** : l'attaquant doit viser le canal **privé**, pas le navigateur exposé. » |
+| **« Quelles sont les traductions de vocabulaire ? »** | « IdP ↔ OP, SP ↔ RP, assertion ↔ ID Token, `NameID` ↔ `sub`, Metadata ↔ Discovery, `AuthnContextClassRef` ↔ `acr`. » |
+| **« Que gagne-t-on à migrer vers OIDC ? »** | « JSON (moins de failles de parsing), **rotation automatique** (JWKS), mobile/API natifs, jetons d'accès. » |
+| **« Que perd-on / que coûte la migration ? »** | « Reconfigurer chaque SP, refaire les fédérations, remapper les attributs, former les équipes — et le **risque de régression**. » |
+
+> [!tip] La phrase qui tue
+> **« Même problème, deux philosophies : SAML fait circuler la preuve par le navigateur, OIDC n'y fait passer qu'un code sans valeur — d'où la différence de rigueur de validation. »**
+
+---
+
 ## Voir aussi
 
 - [[saml2]] — le protocole en détail.

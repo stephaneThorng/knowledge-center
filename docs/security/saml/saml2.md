@@ -412,6 +412,25 @@ L'IdP renvoie une **page HTML** contenant un formulaire auto-soumis :
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« SAML, en une phrase ? »** | « Un protocole de **fédération d'identité** : l'IdP émet une **assertion XML signée**, transportée par le **navigateur** jusqu'au SP. » |
+| **« IdP et SP, qui est qui ? »** | « **IdP** = le guichet qui **sait qui tu es** (= OP en OIDC). **SP** = l'application qui **veut savoir qui tu es** (= RP). » |
+| **« Pourquoi SAML est-il encore partout ? »** | « Il est arrivé **avant** : parc installé énorme, certifié et audité. On ne le remplace pas — on **gravite autour**. » |
+| **« Quels sont les deux bindings principaux ? »** | « **HTTP-Redirect** (la requête, dans l'URL) et **HTTP-POST** (la réponse : un formulaire auto-soumis). » |
+| **« Qu'est-ce qui circule par le navigateur ? »** | « **La preuve d'identité elle-même** (l'assertion signée) — contrairement à OIDC qui n'y fait passer qu'un **code sans valeur**. » |
+| **« Les attaques à connaître ? »** | « **XML Signature Wrapping** (signature valide sur un autre nœud), **rejeu d'assertion**, **XXE**, **IdP-initiated non protégé**. » |
+
+> [!tip] La phrase qui tue
+> **« SAML fait transiter la preuve d'identité elle-même par le navigateur — c'est ce qui explique sa surface d'attaque et ce qu'OIDC a corrigé. »**
+
+---
+
 ## Voir aussi
 
 - [[saml_vs_oidc]] — le comparatif : deux réponses au même problème.

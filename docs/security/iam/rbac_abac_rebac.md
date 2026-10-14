@@ -338,6 +338,25 @@ PERMIT (sujet, action, ressource)
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« RBAC, ABAC, ReBAC ? »** | « Trois modèles d'autorisation : par **rôles**, par **attributs + contexte**, par **relations** (partage). » |
+| **« Comment choisir ? »** | « Par le **niveau de finesse nécessaire** : RBAC suffit pour 3 profils, ABAC pour du contextuel, ReBAC pour du partage collaboratif. En pratique : **on combine**. » |
+| **« Symptôme : RBAC a atteint ses limites ? »** | « Quand un **nom de rôle contient un attribut** (`comptable-junior-site-nord`) → il est temps de passer à **ABAC** pour ces dimensions. » |
+| **« PDP, PEP, PIP ? »** | « **PEP** applique, **PDP** décide, **PIP** fournit les données. La logique vit dans le **PDP central** — l'application ne décide jamais. » |
+| **« Où est le coût d'ABAC ? »** | « Dans l'**auditabilité** : expliquer « pourquoi cette décision ? » devient difficile. La traçabilité doit être conçue dès le départ. » |
+| **« Un `scope` OAuth est-il une autorisation métier ? »** | « **Non** : il dit « l'appli peut appeler cette API », pas « cet utilisateur peut voir ce dossier ». Les deux sont séparés. » |
+
+> [!tip] La phrase qui tue
+> **« RBAC par rôles, ABAC par attributs, ReBAC par relations — et quand un nom de rôle contient un attribut, il est temps de passer à ABAC. »**
+
+---
+
 ## Voir aussi
 
 - [[auth_workflows]] — l'étape d'avant : qui es-tu ?

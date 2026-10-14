@@ -423,6 +423,25 @@ Et EN PLUS (hors SCIM, mais indispensable) :
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« C'est quoi SCIM ? »** | « Un standard **REST** (RFC 7643/7644) pour **créer, modifier, supprimer** automatiquement les comptes entre un IdP et les applications. » |
+| **« SCIM authentifie-t-il ? »** | « **Non** : il **gère le compte**. L'authentification, c'est OIDC/SAML. Les deux sont **complémentaires**. » |
+| **« Le sens du flux ? »** | « L'**IdP est la source de vérité** et il **pousse** vers les applications (outbound provisioning). » |
+| **« Quel champ porte le déprovisionnement ? »** | « **`active: false`** via PATCH — à préférer à `DELETE`, qui détruit l'historique et l'attribution. » |
+| **« C'est quoi JML ? »** | « **Joiner** (créer), **Mover** (mettre à jour — **ajouter ET retirer**), **Leaver** (désactiver). Le Leaver est le plus critique. » |
+| **« Désactiver le compte suffit-il au départ ? »** | « **Non** : il faut aussi **révoquer les sessions** et les **jetons** (refresh), sinon l'accès survit. » |
+
+> [!tip] La phrase qui tue
+> **« SCIM prépare le compte, OIDC/SAML ouvre la session — et un déprovisionnement complet révoque aussi les sessions et les jetons. »**
+
+---
+
 ## Voir aussi
 
 - [[auth_workflows]] — ce qui se passe à la connexion, une fois le compte créé.
