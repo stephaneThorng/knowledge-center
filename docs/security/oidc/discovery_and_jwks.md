@@ -262,6 +262,25 @@ Le client cherche `kid: "2026-09-01-a1b2"` dans ce tableau, reconstruit la clé 
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« À quoi sert Discovery ? »** | « Publier la **carte de visite** du serveur : endpoints, scopes supportés, algorithmes — à `/.well-known/openid-configuration`. » |
+| **« À quoi sert JWKS ? »** | « Publier les **clés publiques** du serveur, pour que le client vérifie les signatures **hors-ligne**, sans config manuelle. » |
+| **« Comment le client trouve-t-il la clé ? »** | « Le `kid` du header du jeton sélectionne la bonne clé dans la JWKS (qui peut en contenir plusieurs, pour la rotation). » |
+| **« Que faire si le `kid` est inconnu ? »** | « **Recharger la JWKS une fois**, réessayer ; si toujours introuvable → **rejeter**. Jamais de confiance par défaut. » |
+| **« Pourquoi une JWKS contient-elle plusieurs clés ? »** | « Pour la **rotation** : pendant la transition, l'ancienne et la nouvelle clé coexistent. » |
+| **« Quel est le piège principal ? »** | « Un **`issuer` non épinglé** : si on ne compare pas `iss` **exactement** (casse, slash final), on accepte les jetons d'un autre serveur. » |
+
+> [!tip] La phrase qui tue
+> **« Discovery est la carte de visite, JWKS le porte-clés public : une seule adresse connue, et tout le reste se découvre — mais l'`issuer` doit être épinglé. »**
+
+---
+
 ## Voir aussi
 
 - [[id_token]] — le jeton dont ce document permet de vérifier la signature.

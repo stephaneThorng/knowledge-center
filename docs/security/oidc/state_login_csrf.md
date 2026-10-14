@@ -263,6 +263,23 @@ Le state est ensuite **invalidé** (usage unique) pour qu'une seconde réponse n
 >
 > **Pourquoi c'est vital :** sans lui, on peut te faire entrer dans le compte de quelqu'un d'autre à ton insu, et PKCE ne peut rien y faire.
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« À quoi sert le `state` ? »** | « **Corrélation** : le client le pose à l'aller, exige de le retrouver au retour. Il protège contre le **login CSRF / injection de code**. » |
+| **« Qui vérifie le `state` ? »** | « **Le client**, avant l'échange du jeton. PKCE, lui, est vérifié par le **serveur d'autorisation**, pendant l'échange. » |
+| **« C'est quoi le login CSRF ? »** | « L'attaquant fait **entrer la victime dans SON compte** : elle croit remplir ses documents, tout part chez lui. Rien d'anormal en apparence. » |
+| **« PKCE suffit-il ? »** | « **Non** : l'attaquant détient le `code_verifier` de **son propre** flow, donc le challenge matche. PKCE couvre le **vol**, le `state` couvre l'**injection**. » |
+| **« `state` ou `nonce` ? »** | « `state` protège la **réponse d'autorisation** (la connexion) ; `nonce` protège l'**ID Token** (l'identité). Les deux sont nécessaires. » |
+| **« Comment bien mettre en œuvre le `state` ? »** | « ≥ 128 bits d'aléa, lié à la **session serveur**, **usage unique**, comparé **strictement** avant tout appel à `/token`. » |
+
+> [!tip] La phrase qui tue
+> **« Le `state` est un numéro de suivi : PKCE empêche qu'on ouvre ton colis, le `state` empêche qu'on te fasse signer un colis qui n'est pas le tien. »**
+
 ## Voir aussi
 
 - [[authorization_code_flow]] — le flow où le `state` est émis et vérifié.

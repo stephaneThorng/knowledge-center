@@ -236,6 +236,25 @@ Puis, côté client : **signature vérifiée** via la JWKS de l'`issuer` épingl
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« OAuth 2.1, c'est un nouveau protocole ? »** | « **Non** : c'est OAuth 2.0 **+ les bonnes pratiques** (RFC 9700 / BCP 240), rassemblées en un seul document. » |
+| **« Qu'est-ce qui est supprimé ? »** | « **Implicit** (déprécié) et **Password** (interdit). Le premier exposait le jeton dans l'URL, le second donnait le mot de passe au client. » |
+| **« Les 3 règles les plus importantes ? »** | « **PKCE obligatoire** (clients publics), **`redirect_uri` exacte** (pas de wildcard), et **toujours vérifier la signature** avant de lire un jeton. » |
+| **« Que vérifie un client dans un ID Token ? »** | « Dans l'ordre : **signature**, `aud`, `nonce`, `iss`, `exp`/`iat`, et `alg` en liste blanche. Un seul échec → **rejet**. » |
+| **« C'est quoi la défense en profondeur ? »** | « Empiler les protections (**PKCE** *et* `state` *et* redirection exacte) : aucune ne remplace les autres, chacune couvre un vecteur. » |
+| **« Que devient la « sécurité » côté serveur ? »** | « Code à usage unique + TTL court, détection de rejeu, refresh token **rotatif**, `aud` par API, scope par opération, secrets en coffre-fort, jetons masqués en log. » |
+
+> [!tip] La phrase qui tue
+> **« OAuth 2.1 n'invente rien, il ferme les choix dangereux : PKCE obligatoire, redirection exacte, signature vérifiée — et les jetons ne traversent plus jamais le navigateur. »**
+
+---
+
 ## Voir aussi
 
 - [[pkce]] — la protection centrale imposée par la RFC 9700.

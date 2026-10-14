@@ -348,6 +348,25 @@ L'utilisateur voit : **le sélecteur de comptes**, champ **pré-rempli** avec `a
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« À quoi sert `prompt` ? »** | « À piloter **ce que voit l'utilisateur** — c'est de l'**UX**, pas de la sécurité. Quatre valeurs : `none`, `login`, `consent`, `select_account`. » |
+| **« Que fait `prompt=none` ? »** | « Il **interdit toute interface** : si une interaction est nécessaire, l'OP renvoie une **erreur**, pas une page. » |
+| **« Quel est le piège du `prompt=none` ? »** | « Sans **plan B**, l'application casse : il faut intercepter `login_required` et **relancer sans** `prompt=none` pour afficher le login. » |
+| **« Défaut de conception du `prompt=none` ? »** | « Ce n'est **pas** une protection : aucune vérification cryptographique. C'est une **optimisation d'expérience**. » |
+| **« À quoi sert `max_age` ? »** | « Exiger une authentification **fraîche** (opération sensible). C'est le **seul** paramètre avec une contrepartie **vérifiable** : `auth_time`. » |
+| **« `auth_time` ou `iat` ? »** | « `iat` = quand le **jeton** a été émis ; `auth_time` = quand l'**utilisateur** s'est connecté. En SSO, le jeton est neuf mais la connexion ancienne. » |
+
+> [!tip] La phrase qui tue
+> **« Ces paramètres pilotent l'interface, pas la sécurité : le seul qui porte une garantie vérifiable est `max_age`, grâce à `auth_time`. »**
+
+---
+
 ## Voir aussi
 
 - [[authorization_code_flow]] — la liste complète des paramètres de `/authorize`.

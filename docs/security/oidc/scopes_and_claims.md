@@ -293,9 +293,28 @@ Host: auth.example.com
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« À quoi sert un scope ? »** | « À borner ce qu'un jeton autorise (une **capacité**, pas une identité). Principe de **moindre privilège** : demander le minimum. » |
+| **« Scopes standard OIDC ? »** | « `openid` (obligatoire), `profile`, `email`, `address`, `phone`, et `offline_access` (droit à un refresh token). » |
+| **« Différence scope / claim ? »** | « Le **scope** est ce qu'on **demande** ; le **claim** est ce qu'on **reçoit**. Les scopes déterminent les claims disponibles. » |
+| **« Qui décide des claims émis ? »** | « **L'OP**, selon les scopes consentis et sa politique. Le paramètre `claims` permet de les solliciter plus finement. » |
+| **« À quoi sert `/userinfo` ? »** | « Récupérer des claims additionnels avec l'**access token** — pour ne pas alourdir l'ID Token. » |
+| **« Quand faut-il `email_verified` ? »** | « **Toujours** avant d'utiliser `email` comme clé : sans lui, un email non vérifié permet la prise de compte. » |
+
+> [!tip] La phrase qui tue
+> **« Le scope est ce qu'on demande, le claim est ce qu'on reçoit — et l'OP reste seul maître de ce qu'il émet. »**
+
+---
+
 ## Voir aussi
 
-- [[openid_connect]] — la couche qui introduit scopes identitaires et ID Token.
+- [[openid_connect]] — la couche qui définit les scopes identitaires.
 - [[id_token]] — le réceptacle des claims d'identité, et sa validation.
 - [[access_token]] — le jeton qui ouvre l'accès à `/userinfo`.
 - [[jwt]] — le format de transport sous-jacent.

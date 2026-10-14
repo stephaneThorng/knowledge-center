@@ -292,6 +292,25 @@ Pourquoi c'est ainsi :
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« C'est quoi le SSO, côté OP ? »** | « Un **cookie de session** chez l'OP, qui ne contient qu'un **`sid`** ; l'état réel (qui, quand, comment) vit **côté serveur**. » |
+| **« Que contient le cookie de session ? »** | « **Un identifiant uniquement** — pas de nom, pas d'email, pas de niveau. Si le serveur supprime la fiche, le cookie ne vaut plus rien. » |
+| **« Les scopes sont-ils dans la session ? »** | « **Non** : les scopes vivent dans les **jetons**, chacun avec son `aud`. La session porte l'identité et le niveau. » |
+| **« Le consentement vaut-il pour toutes les apps ? »** | « **Non** : il est enregistré **par couple (utilisateur, client)**. Le consentement donné à App1 ne couvre pas App3. » |
+| **« Le niveau d'authentification peut-il baisser ? »** | « **Jamais** — il est **monotone**. Une app qui demande moins n'obtient rien de plus et ne change rien pour les autres. » |
+| **« Pourquoi la session est-elle stateful ? »** | « Pour pouvoir être **révoquée instantanément** — contrairement à un JWT, auto-porteur et non révocable avant son `exp`. » |
+
+> [!tip] La phrase qui tue
+> **« Le cookie ne contient qu'un numéro : tout le reste est côté serveur — c'est ce qui rend la session révocable à l'instant, et c'est ça le SSO. »**
+
+---
+
 ## Voir aussi
 
 - [[logout]] — la fin de vie de la session, et sa propagation aux applications.
