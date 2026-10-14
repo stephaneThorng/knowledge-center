@@ -34,6 +34,14 @@ title: Knowledge Center
 
 ➡️ **Point d'entrée :** [Sécurité — vue d'ensemble](security/index)
 
+### ☕ Java
+
+| Sous-domaine | Ce que tu y trouves |
+|---|---|
+| **[Java](java/index)** | La théorie sous le code : modèle mémoire, concurrence, JVM, ramasse-miettes, profilage. |
+
+➡️ **Point d'entrée :** [Java — vue d'ensemble](java/index)
+
 ---
 
 ## Les principes de ce site
