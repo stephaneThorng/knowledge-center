@@ -20,7 +20,11 @@ sources: [SAML 2.0 Core, SAML 2.0 Bindings, SAML 2.0 Profiles]
 > [!tip] En clair
 > Ce dossier est **petit** — SAML est un protocole, mais la façon de l'aborder est simple.
 >
-> ⚠️ **Commence par la note `SAML 2.0`** : elle fait le tour complet en une seule note, avec l'analogie qui porte tout le reste. Les autres notes ne viendront qu'ensuite, si on en a besoin.
+> ⚠️ **Commence par la note `SAML 2.0`** : elle fait le tour complet en une seule note, avec l'analogie qui porte tout le reste.
+>
+> Ensuite, selon ton besoin :
+> - **tu dois diagnostiquer une trame** → va voir **`Lire une trame SAML`** ;
+> - **tu dois changer un identifiant** (NameID, mapping) → va voir **`Le NameID`**.
 
 **Pourquoi s'intéresser à un protocole « ancien » ?**
 
@@ -36,8 +40,10 @@ sources: [SAML 2.0 Core, SAML 2.0 Bindings, SAML 2.0 Profiles]
 ## Parcours conseillé
 
 1. **[[saml2]]** — le protocole : acteurs, assertions, signatures, profils, le Web SSO.
-2. **[[saml_vs_oidc]]** — le comparatif : pourquoi OIDC a gagné pour le neuf, et pourquoi SAML survit.
-3. *(à venir, si besoin)* — Bindings détaillés, Single Logout, métadonnées SAML.
+2. **[[saml_message_examples]]** — **lire une trame** : décoder un `AuthnRequest` et une `Response`, et suivre la grille de diagnostic.
+3. **[[saml_nameid]]** — **l'identifiant** : politique de format, mapping, et la règle « l'IdP écrit, le SP range ».
+4. **[[saml_vs_oidc]]** — le comparatif : pourquoi OIDC a gagné pour le neuf, et pourquoi SAML survit.
+5. *(à venir, si besoin)* — Single Logout, bindings et métadonnées détaillés, mapping d'attributs.
 
 ---
 
@@ -46,6 +52,8 @@ sources: [SAML 2.0 Core, SAML 2.0 Bindings, SAML 2.0 Profiles]
 | Note | En une phrase |
 |---|---|
 | [[saml2]] | Le protocole de fédération : assertions XML signées, échangées via le navigateur. |
+| [[saml_message_examples]] | Lire une capture réseau : emballages, `AuthnRequest`/`Response` décodés, grille de diagnostic. |
+| [[saml_nameid]] | Le `NameID` : négociation du format, mapping par format, et qui décide de la valeur. |
 | [[saml_vs_oidc]] | Deux réponses au même problème : fédérer une identité entre organisations. |
 
 ---
