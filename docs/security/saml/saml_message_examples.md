@@ -349,6 +349,24 @@ SAMLResponse=PHNhbWxwOlJlc3BvbnNlIHhtbG5zOnNhbWxwPSJ1cm46...&RelayState=xyz789
 
 ---
 
+## 🗣️ Révision entretien
+
+> [!tip] En clair
+> Les questions qui tombent, et la réponse courte qui fait mouche.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« Comment circule une assertion SAML ? »** | « Par le **navigateur de l'utilisateur** : l'IdP renvoie un formulaire HTML auto-soumis (binding **HTTP-POST**) vers l'ACS du SP. Le navigateur **porte** la preuve signée — il ne l'écrit jamais. » |
+| **« Où se trouve la signature ? »** | « Dans le nœud qu'elle protège — **Response et/ou Assertion** — et **en premier** dans ce nœud. Seule l'assertion peut être signée : le SP doit savoir **où** chercher. » |
+| **« Pourquoi SAML est-il critiqué côté sécurité ? »** | « Parce que ce qui traverse le navigateur n'est pas un code opaque mais **la preuve d'identité complète**. D'où : XSW (signature valide sur un **autre** nœud), rejeu d'assertion, XXE. » |
+| **« C'est quoi l'ACS ? »** | « L'**Assertion Consumer Service** : l'endpoint du SP où arrive la Response. Une URL ACS mal configurée → rejet immédiat (`Recipient mismatch`). » |
+| **« IdP-initiated, pourquoi c'est risqué ? »** | « Pas d'`InResponseTo` : le SP reçoit une assertion **sans avoir rien demandé**, donc aucune corrélation possible → **injection / rejeu** d'assertion. » |
+
+> [!tip] La phrase qui tue
+> **« SAML fait transiter la preuve elle-même sur le canal exposé — c'est ce qui explique sa surface d'attaque, et ce qu'OIDC a corrigé avec son architecture à deux jambes. »**
+
+---
+
 ## Voir aussi
 
 - [[saml2]] — le protocole : acteurs, assertion, bindings, Web SSO, attaques.

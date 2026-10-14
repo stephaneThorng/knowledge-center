@@ -255,6 +255,25 @@ Voir aussi : [[saml_message_examples]] (où l'on lit le NameID dans une trame), 
 
 ---
 
+## 🗣️ Révision entretien
+
+> [!tip] En clair
+> Les questions qui tombent, et la réponse courte qui fait mouche.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« C'est quoi un NameID ? »** | « L'**identifiant de l'utilisateur** dans l'assertion. Il a un **format** (email, persistent, unspecified…) et une **valeur**. **C'est l'IdP qui décide des deux.** » |
+| **« Différence entre NameIDPolicy et NameID Mapper ? »** | « La **Policy**, c'est la **liste ordonnée de formats** acceptés — une **négociation**. Le **Mapper**, c'est **une règle par format** : « pour ce format, prends tel attribut ». » |
+| **« Qui décide de la valeur du NameID ? »** | « **L'IdP seul.** Le SP ne peut pas la transformer : il n'y a **aucun lookup caché**. » |
+| **« Le SP peut-il exiger un format ? »** | « Il peut le **demander** (`NameIDPolicy`), pas l'imposer. Si l'IdP n'a pas ce format dans sa liste → refus ou repli sur son défaut. » |
+| **« Pourquoi éviter l'email comme NameID ? »** | « L'assertion transite **en clair** et peut être journalisée. Un email = **donnée personnelle** vers un tiers. → identifiant **opaque** (`persistent`, numéro interne). » |
+| **« Que se passe-t-il si le format reçu n'est pas dans la liste du SP ? »** | « Le **mapping par défaut du système** s'applique **silencieusement** → « user not found » d'apparence inexplicable. » |
+
+> [!tip] La phrase qui tue
+> **« L'IdP écrit, le SP range : la valeur du NameID est décidée par l'IdP, le SP ne fait que dire dans quel champ local il la range — aucun échange de données entre eux, seulement un document XML. »**
+
+---
+
 ## Voir aussi
 
 - [[saml_message_examples]] — où l'on **voit** le NameID arriver dans une trame, et comment le lire.

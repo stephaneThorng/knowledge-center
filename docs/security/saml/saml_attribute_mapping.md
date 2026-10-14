@@ -276,6 +276,25 @@ Les deux donnent le **même vide**, mais **pas la même intention** — c'est un
 
 ---
 
+## 🗣️ Révision entretien
+
+> [!tip] En clair
+> Les questions qui tombent, et la réponse courte qui fait mouche.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« Différence entre NameID et attributs ? »** | « Le `NameID` **identifie** (une valeur, obligatoire). Les **attributs** **décrivent** : rôles, groupes, profil (plusieurs valeurs, optionnels mais vitaux pour l'**autorisation**). » |
+| **« Où se configure l'émission des attributs ? »** | « **Côté IdP**, à **deux niveaux** : un **mapping global** hérité par tous les SP, et une **surcharge par SP** (par entité de confiance). » |
+| **« Le SP peut-il demander des attributs précis ? »** | « **Non** — il n'existe pas d'`AttributePolicy` en SAML. Le SP **lit** ce qui arrive. `RequestedAttribute` dans les métadonnées est **indicatif**, pas contraignant. » |
+| **« Que fait le SP si un attribut requis manque ? »** | « **L'assertion reste valide** — c'est une **politique locale du SP** : il **ignore** (attribut facultatif), **refuse** l'accès, ou applique une **valeur par défaut**. Le protocole ne tranche pas. » |
+| **« C'est quoi la liste vide `[]` ? »** | « Un mécanisme de **soustraction** : `attributs = []` neutralise l'héritage global pour ce SP. ⚠️ **Trop large, il casse l'autorisation** → après un `[]`, il faut **redéclarer** explicitement ce qui doit sortir. » |
+| **« Comment retirer une donnée sensible d'un flux SSO ? »** | « **Côté IdP**, au **niveau par SP** : `[]` puis redéclarer **uniquement** l'identifiant opaque et les rôles — vérifier qu'elle n'est **pas émise ailleurs** (attributs). » |
+
+> [!tip] La phrase qui tue
+> **« L'IdP émet, le SP lit — et il n'y a aucune demande formelle : le contrat d'attributs est humain, pas protocolaire. »**
+
+---
+
 ## Voir aussi
 
 - [[saml_nameid]] — l'autre canal : l'identification, la politique de format et le mapping.
