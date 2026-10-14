@@ -258,6 +258,7 @@ Voir aussi : [[saml_message_examples]] (où l'on lit le NameID dans une trame), 
 ## Voir aussi
 
 - [[saml_message_examples]] — où l'on **voit** le NameID arriver dans une trame, et comment le lire.
+- [[saml_attribute_mapping]] — l'autre canal : les attributs (`AttributeStatement`), leur émission et leur mapping.
 - [[saml2]] — le protocole : acteurs, assertion, bindings, attaques.
 - [[saml_vs_oidc]] — l'équivalent OIDC du `NameID` (`sub`), et pourquoi le sujet y est opaque par conception.
 - [[scopes_and_claims]] — côté OIDC : les *claims*, équivalents du `AttributeStatement`.

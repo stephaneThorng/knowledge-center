@@ -353,6 +353,7 @@ SAMLResponse=PHNhbWxwOlJlc3BvbnNlIHhtbG5zOnNhbWxwPSJ1cm46...&RelayState=xyz789
 
 - [[saml2]] — le protocole : acteurs, assertion, bindings, Web SSO, attaques.
 - [[saml_nameid]] — la négociation du format et le mapping : le cœur du diagnostic `NameID`.
+- [[saml_attribute_mapping]] — les attributs (`AttributeStatement`) : émission, surcharge par SP, et autorisation.
 - [[saml_vs_oidc]] — le comparatif : pourquoi OIDC a fait d'autres choix.
 - [[state_login_csrf]] — le rôle de corrélation (`RelayState` / `InResponseTo`), côté OIDC.
 - [[index]] — carte d'entrée du domaine SAML.

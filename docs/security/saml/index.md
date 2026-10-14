@@ -42,8 +42,9 @@ sources: [SAML 2.0 Core, SAML 2.0 Bindings, SAML 2.0 Profiles]
 1. **[[saml2]]** — le protocole : acteurs, assertions, signatures, profils, le Web SSO.
 2. **[[saml_message_examples]]** — **lire une trame** : décoder un `AuthnRequest` et une `Response`, et suivre la grille de diagnostic.
 3. **[[saml_nameid]]** — **l'identifiant** : politique de format, mapping, et la règle « l'IdP écrit, le SP range ».
-4. **[[saml_vs_oidc]]** — le comparatif : pourquoi OIDC a gagné pour le neuf, et pourquoi SAML survit.
-5. *(à venir, si besoin)* — Single Logout, bindings et métadonnées détaillés, mapping d'attributs.
+4. **[[saml_attribute_mapping]]** — **les attributs** : émission, surcharge par SP, autorisation.
+5. **[[saml_vs_oidc]]** — le comparatif : pourquoi OIDC a gagné pour le neuf, et pourquoi SAML survit.
+6. *(à venir, si besoin)* — Single Logout, bindings et métadonnées détaillés.
 
 ---
 
@@ -54,6 +55,7 @@ sources: [SAML 2.0 Core, SAML 2.0 Bindings, SAML 2.0 Profiles]
 | [[saml2]] | Le protocole de fédération : assertions XML signées, échangées via le navigateur. |
 | [[saml_message_examples]] | Lire une capture réseau : emballages, `AuthnRequest`/`Response` décodés, grille de diagnostic. |
 | [[saml_nameid]] | Le `NameID` : négociation du format, mapping par format, et qui décide de la valeur. |
+| [[saml_attribute_mapping]] | Les attributs : deux niveaux d'émission côté IdP, la liste vide `[]`, et l'autorisation. |
 | [[saml_vs_oidc]] | Deux réponses au même problème : fédérer une identité entre organisations. |
 
 ---
