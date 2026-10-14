@@ -222,6 +222,25 @@ L'API vérifie la signature, l'audience et le scope. Elle sait que l'appelant es
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« C'est quand, le client_credentials ? »** | « Quand il n'y a **aucun utilisateur** : un service parle à une API en son **propre nom** (M2M, job nocturne, CI/CD). » |
+| **« Que représente le `sub` ici ? »** | « **L'application**, jamais une personne. Ne jamais créer une session utilisateur avec ce jeton. » |
+| **« Pourquoi pas de PKCE ? »** | « PKCE protège un **code** transitant dans un navigateur. Ici : pas de code, pas de navigateur, donc rien à protéger. » |
+| **« Pourquoi pas de refresh token ? »** | « Le client détient déjà ses identifiants : il peut redemander un jeton **quand il veut**, sans l'aide d'un autre secret. » |
+| **« Où est le vrai risque ? »** | « Dans le **`client_secret`** : c'est la seule barrière. Coffre-fort, rotation, et **un client par service**. » |
+| **« Comment durcir l'authentification du client ? »** | « `private_key_jwt` ou **mTLS** plutôt qu'un secret partagé : aucune valeur secrète ne circule. » |
+
+> [!tip] La phrase qui tue
+> **« Client Credentials = un service qui agit en son propre nom : le vrai sujet de sécurité n'est pas le protocole, c'est la garde du secret. »**
+
+---
+
 ## Voir aussi
 
 - [[oauth2]] — le cadre et la liste des grants.

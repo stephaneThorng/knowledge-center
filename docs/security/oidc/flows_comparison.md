@@ -216,6 +216,25 @@ Voir [[security_oauth21]] pour le détail, et [[pkce]] pour la protection centra
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« Comment choisir un flow ? »** | « **Deux questions** : y a-t-il un utilisateur ? le client peut-il garder un secret ? En cas de doute : **Authorization Code + PKCE**. » |
+| **« Pourquoi Authorization Code par défaut ? »** | « Les jetons **ne traversent jamais** le navigateur : seul un code jetable y circule, échangé ensuite sur le back-channel TLS. » |
+| **« Implicit, pourquoi c'est mort ? »** | « Le jeton arrivait **dans l'URL** → historique, `Referer`, JavaScript. Supprimé par OAuth 2.1, déprécié par la RFC 9700. » |
+| **« Password grant, pourquoi interdit ? »** | « Le client **voit le mot de passe** de l'utilisateur — précisément ce qu'OAuth existe pour éviter. » |
+| **« C'est quoi le Hybrid ? »** | « Renvoie **code + id_token** dans la redirection. **Cas avancé** : exige la validation de `c_hash`/`at_hash`. » |
+| **« Une SPA sans back-end, quel flow ? »** | « **Authorization Code + PKCE** (obligatoire) — jamais Implicit. » |
+
+> [!tip] La phrase qui tue
+> **« Deux questions suffisent pour choisir : y a-t-il un utilisateur, et le client peut-il garder un secret — le reste, soit c'est mort, soit c'est avancé. »**
+
+---
+
 ## Voir aussi
 
 - [[authorization_code_flow]] — le flow recommandé, de bout en bout.

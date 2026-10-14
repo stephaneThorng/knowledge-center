@@ -230,6 +230,25 @@ L'ancien `8xLOxBtZp8` est désormais **invalide**. S'il réapparaît un jour, l'
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« À quoi sert un refresh token ? »** | « Obtenir un **nouvel access token** sans réauthentifier l'utilisateur : badge **court**, duplicata **long**. » |
+| **« C'est quoi la rotation ? »** | « À chaque usage, l'ancien refresh token est **invalidé** et un nouveau émis. Un ancien qui réapparaît = **vol détecté** → on révoque **toute la famille**. » |
+| **« Où le stocker ? »** | « **Côté serveur**, chiffré. Jamais en `localStorage`, jamais dans une URL, jamais en log. Sur mobile : Keychain/Keystore. » |
+| **« Pourquoi `offline_access` en OIDC ? »** | « Par défaut, l'OP n'en donne **pas** : il faut le demander. Ça permet de tracer **quelle application** détient un accès durable. » |
+| **« Comment couper un accès durablement ? »** | « **Révoquer** le refresh token (RFC 7009) — sinon un changement de mot de passe ne suffit pas. » |
+| **« Peut-on élargir les droits au renouvellement ? »** | « **Jamais** : `scope` au refresh ne peut que **restreindre** la portée initiale. » |
+
+> [!tip] La phrase qui tue
+> **« Le refresh token est le duplicata du badge : on le change à chaque usage, et un ancien qui réapparaît prouve le vol. »**
+
+---
+
 ## Voir aussi
 
 - [[access_token]] — le badge que le refresh token sert à renouveler.

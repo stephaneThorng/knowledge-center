@@ -330,6 +330,25 @@ Manquer l'étape **5** est l'erreur la plus répandue — et c'est celle qui cr�
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« Un logout local suffit-il ? »** | « **Non** : il ne ferme que **cette** application. Les autres gardent leur session → il faut **propager** (poste partagé = faille). » |
+| **« Une appli peut-elle tuer la session de l'OP ? »** | « **Non** : le cookie appartient au domaine de l'OP (même-origine). Elle peut seulement **demander** via `end_session_endpoint`. » |
+| **« Back-channel ou front-channel ? »** | « **Back-channel** (serveur à serveur, `logout_token` signé) = **fiable**. Front-channel (iframes) = fragile, **cookies tiers bloqués** → échec silencieux. » |
+| **« À quoi sert `id_token_hint` ? »** | « Prouver à l'OP **quelle** session fermer et **qui** le demande. Sans lui, l'OP peut refuser ou demander confirmation. » |
+| **« À quoi sert `sid` ? »** | « Fermer **cette session précise** plutôt que toutes celles de l'utilisateur — donc rester connecté ailleurs. » |
+| **« Pourquoi révoquer les refresh tokens ? »** | « Fermer la session ne rend pas les jetons inutilisables : sans révocation, l'appli se **refabrique** des access tokens. » |
+
+> [!tip] La phrase qui tue
+> **« Un logout local ne déconnecte que localement : seule la propagation — back-channel en priorité — coupe réellement toutes les sessions. »**
+
+---
+
 ## Voir aussi
 
 - [[sso_session_and_consent]] — ce que la déconnexion détruit, et pourquoi le `sid` existe.

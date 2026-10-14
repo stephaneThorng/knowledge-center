@@ -262,6 +262,25 @@ C'est le flow utilisé par `gh auth login`, les applications de streaming sur TV
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« À quoi sert le device flow ? »** | « Connecter un appareil **sans navigateur utilisable** (TV, console, CLI) : l'appareil affiche un code court, l'utilisateur s'authentifie **ailleurs**. » |
+| **« `user_code` ou `device_code` ? »** | « `user_code` = **public**, affiché à l'écran. `device_code` = **secret**, gardé par l'appareil. Ne pas les confondre. » |
+| **« Pourquoi du polling ? »** | « L'appareil n'est pas joignable (derrière une box, sans IP publique) : la seule direction possible est **appareil → serveur**. » |
+| **« À quoi sert `interval` ? »** | « Rythme minimal entre deux demandes. Trop vite → `slow_down` (et l'intervalle doit augmenter de 5 s). » |
+| **« PKCE s'applique-t-il ? »** | « **Oui** : l'échange du `device_code` est un code flow déguisé → PKCE recommandé pour les clients non confidentiels (RFC 8628 §5.6). » |
+| **« Quel est le piège de sécurité propre ? »** | « Le **phishing par code** : un attaquant fait saisir **son** `user_code` à une victime, qui autorise l'accès pour lui. » |
+
+> [!tip] La phrase qui tue
+> **« Le mot de passe ne circule jamais sur l'appareil limité : il se saisit sur un appareil confortable, l'appareil se contente d'attendre son badge. »**
+
+---
+
 ## Voir aussi
 
 - [[oauth2]] — le cadre et la liste des grants.

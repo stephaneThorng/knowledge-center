@@ -249,6 +249,23 @@ Le serveur recalcule `E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM` et le retrouv
 >
 > **Ce que PKCE ne fait PAS :** il ne t'empêche pas d'être envoyé dans le compte d'un autre. Ça, c'est le travail du [[state_login_csrf]] — les deux vont **ensemble**.
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« PKCE, à quoi ça sert ? »** | « Lier le `code` au client qui l'a demandé : on envoie le **`code_challenge`** (empreinte) au début, le **`code_verifier`** (secret) à l'échange. Un code volé est **inexploitable sans le verifier**. » |
+| **« Pourquoi S256 et pas plain ? »** | « `plain` enverrait le verifier **lui-même** dans l'URL → PKCE devient décoratif. `S256` est la **seule** méthode acceptable (RFC 9700). » |
+| **« PKCE remplace-t-il le client secret ? »** | « **Non**, ce sont deux propriétés : le secret prouve *l'identité du client*, PKCE lie *le code à la session*. On **cumule** (défense en profondeur). » |
+| **« PKCE remplace-t-il le `state` ? »** | « **Non.** PKCE protège le **code**, le `state` protège contre le **CSRF / injection de code**. Deux vecteurs, deux protections. » |
+| **« Où s'applique PKCE ? »** | « Partout où un code est récupéré : code flow **et** device flow. **Jamais** en client_credentials (ni utilisateur, ni code, ni navigateur). » |
+| **« Pourquoi est-ce devenu obligatoire ? »** | « Coût **nul** (un aléa + un hash), et la RFC 9700 l'impose aux clients publics — OAuth 2.1 l'étend au code flow entier. » |
+
+> [!tip] La phrase qui tue
+> **« PKCE est un cadenas sur le colis : on envoie l'empreinte de sa clé, jamais la clé — et le code volé ne s'ouvre plus. »**
+
 ## Voir aussi
 
 - [[authorization_code_flow]] — le flow que PKCE sécurise.
