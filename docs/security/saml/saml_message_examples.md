@@ -349,10 +349,10 @@ SAMLResponse=PHNhbWxwOlJlc3BvbnNlIHhtbG5zOnNhbWxwPSJ1cm46...&RelayState=xyz789
 
 ---
 
-## 🗣️ Révision entretien
+## 🗣️ Les questions qu'on te posera
 
 > [!tip] En clair
-> Les questions qui tombent, et la réponse courte qui fait mouche.
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
 
 | Si on te demande… | Réponds… |
 |---|---|

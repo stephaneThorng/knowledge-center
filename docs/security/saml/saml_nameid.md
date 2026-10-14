@@ -255,10 +255,10 @@ Voir aussi : [[saml_message_examples]] (où l'on lit le NameID dans une trame), 
 
 ---
 
-## 🗣️ Révision entretien
+## 🗣️ Les questions qu'on te posera
 
 > [!tip] En clair
-> Les questions qui tombent, et la réponse courte qui fait mouche.
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
 
 | Si on te demande… | Réponds… |
 |---|---|
