@@ -346,6 +346,25 @@ Sans la clé privée, l'attaquant échoue à la **première** vérification de l
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« C'est quoi FAPI ? »** | « Un **profil sectoriel** de l'OpenID Foundation : il n'invente rien, il rend **obligatoires** les protections fortes et **interdit** les faibles, pour la finance. » |
+| **« FAPI définit-il de nouveaux mécanismes ? »** | « **Non** : il **sélectionne et combine** PKCE, mTLS/DPoP, PAR, JAR/JARM, validation stricte de l'ID Token. » |
+| **« FAPI 1.0 ou 2.0 ? »** | « **2.0 pour tout projet neuf** : parcours unique, PKCE systématique, **preuve de possession obligatoire**, algorithmes restreints. 1.0 = compatibilité avec l'existant. » |
+| **« Qu'est-ce qui devient obligatoire ? »** | « Code flow seul, PKCE `S256`, jeton **lié au porteur** (DPoP ou mTLS), client authentifié **sans secret partagé**, PAR, JAR/JARM, algorithmes asymétriques. » |
+| **« À quoi sert PAR / JAR / JARM ? »** | « PAR : **pousser** les paramètres (plus dans l'URL). JAR/JARM : **signer** la requête et la réponse d'autorisation (anti-modification). » |
+| **« Qu'est-ce qui distingue vraiment FAPI ? »** | « La **certification** : on ne se déclare pas conforme, on passe des **tests de conformité**. » |
+
+> [!tip] La phrase qui tue
+> **« FAPI n'invente rien, il rend obligatoire ce que le reste recommande — et il le prouve par certification. »**
+
+---
+
 ## Voir aussi
 
 - [[mtls]] — une des deux preuves de possession que FAPI impose.

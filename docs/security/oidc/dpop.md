@@ -370,6 +370,25 @@ Résultat : 200 OK
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« C'est quoi DPoP ? »** | « Lier un access token à une **paire de clés** du client : il signe une **preuve** à chaque requête. Un jeton volé devient inutilisable sans la clé privée. » |
+| **« Qu'est-ce qui change côté requête ? »** | « Le schéma devient **`DPoP`** (au lieu de `Bearer`) dans `Authorization`, **plus** un en-tête `DPoP` qui porte la preuve signée. » |
+| **« Que contient la preuve ? »** | « Un JWT `dpop+jwt` avec la clé publique (`jwk`) et les claims `htm`, `htu`, `iat`, `jti` — et `ath` (hash du jeton) pour un appel d'API. » |
+| **« Comment le jeton est-il lié ? »** | « Via `cnf.jkt` = l'**empreinte de la clé publique** (RFC 7638, JWK thumbprint). » |
+| **« Que vérifie l'API ? »** | « ① signature de la preuve, ② `jkt` de la preuve == `cnf.jkt` du jeton, ③ `htm`/`htu`/`ath`/`iat`/`jti` cohérents et non rejoués. » |
+| **« DPoP ou mTLS ? »** | « **mTLS** : clé dans un certificat (PKI lourde, B2B). **DPoP** : clé dans l'application, **rien à déployer** (SPA, mobile). Les deux peuvent se combiner. » |
+
+> [!tip] La phrase qui tue
+> **« DPoP = un badge qu'on doit signer à chaque fois : la clé privée ne circule jamais, donc un jeton volé ne sert à rien. »**
+
+---
+
 ## Voir aussi
 
 - [[mtls]] — l'autre preuve de possession : la clé dans un certificat, vérifiée à la poignée de main.

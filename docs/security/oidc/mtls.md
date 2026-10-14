@@ -364,6 +364,25 @@ tls_client_auth_certificate_sha256: "bwcK0esc3ACC3DB2Y5_lESsXE8o9ltc05O89jdN-dg2
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« C'est quoi mTLS ? »** | « TLS **bidirectionnel** : le serveur *et* le client présentent un certificat. La vérification se fait **au niveau TLS**, avant toute application. » |
+| **« mTLS chiffre-t-il plus fort ? »** | « **Non** : le chiffrement est le même qu'en HTTPS. mTLS ajoute une **authentification mutuelle** — c'est un mécanisme d'**identité**, pas de confidentialité. » |
+| **« Les deux usages en OAuth ? »** | « ① `tls_client_auth` : authentifier le client par certificat au lieu d'un `client_secret`. ② **Lier le jeton** au certificat via `cnf.x5t#S256`. » |
+| **« Comment un jeton est-il lié au certificat ? »** | « Le jeton porte `cnf.x5t#S256` = l'**empreinte** du certificat. L'API compare l'empreinte de la connexion à celle du jeton. » |
+| **« Pourquoi `x5t#S256` et pas `x5t` ? »** | « `x5t` = SHA-1, **cassé**. `x5t#S256` (SHA-256) est le choix recommandé par la RFC 8705. » |
+| **« Quel est le coût de mTLS ? »** | « Une **PKI** : autorité de certification, délivrance, renouvellement, **révocation** (CRL/OCSP). D'où son usage en B2B/entreprise plutôt qu'en grand public. » |
+
+> [!tip] La phrase qui tue
+> **« mTLS = un badge à l'entrée dans les deux sens : le jeton reste inutilisable sans la clé privée du certificat, qui ne circule jamais. »**
+
+---
+
 ## Voir aussi
 
 - [[dpop]] — l'autre mécanisme de preuve de possession (sans PKI, à chaque requête).

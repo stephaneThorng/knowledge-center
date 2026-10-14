@@ -338,6 +338,25 @@ flowchart TD
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« C'est quoi un workflow d'authentification ? »** | « La **logique** qui décide quelles étapes l'utilisateur franchit et dans quel ordre — il vit **dans l'IdP**. » |
+| **« Workflow ou protocole ? »** | « Le **workflow** décide **ce qui est vérifié** ; le **protocole** (OIDC/SAML) transmet **comment** le résultat (le niveau) part à l'application. Deux couches séparées. » |
+| **« Qu'est-ce que le MFA ? »** | « Plusieurs facteurs de **familles différentes** (savoir / avoir / être). Deux mots de passe ne sont **pas** du MFA. » |
+| **« Quel facteur est le plus résistant ? »** | « La **clé matérielle FIDO2** (résistante au **phishing**). Le SMS est le plus faible (SIM swap, interception). » |
+| **« Pourquoi un fallback est-il vital ? »** | « Sans plan B, perdre son facteur **enferme l'utilisateur dehors** — et le support devient **le maillon faible** (attaque per-sonne). » |
+| **« Où doit vivre la logique ? »** | « **Côté serveur**, liée à la session, et **journalisée**. Une logique en JavaScript est **contournable**. » |
+
+> [!tip] La phrase qui tue
+> **« Le workflow est le parcours fléché, le protocole le transport du résultat : on peut durcir la politique sans toucher aux applications. »**
+
+---
+
 ## Voir aussi
 
 - [[step_up_auth]] — comment l'exigence de niveau est véhiculée par OIDC.

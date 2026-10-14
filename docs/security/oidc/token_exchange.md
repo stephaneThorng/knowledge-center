@@ -400,6 +400,25 @@ grant_type=urn:ietf:params:oauth:grant-type:token-exchange
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« À quoi sert le Token Exchange ? »** | « Échanger un jeton contre un **autre** : bonne **audience**, droits **réduits**, et **chaîne d'acteurs tracée**. » |
+| **« Pourquoi ne pas transmettre le jeton ? »** | « Parce qu'un jeton est destiné à **une** audience : le passer ailleurs **élargit** sa portée, garde des droits trop larges et **perd la traçabilité**. » |
+| **« Le scope peut-il s'élargir ? »** | « **Jamais** : au token exchange, le `scope` ne peut que **réduire** les droits. » |
+| **« Délégation ou impersonation ? »** | « **Délégation** (`act` présent) : traçable, recommandée. **Impersonation** (pas de `act`) : **invisible**, à éviter. » |
+| **« Que disent `sub` et `act` ? »** | « `sub` = **pour qui** on agit ; `act` = **qui agit**. Le `act` peut être **imbriqué** pour toute la chaîne. » |
+| **« Token Exchange ou Refresh Token ? »** | « Exchange **change** l'audience/l'acteur ; refresh **renouvelle** le même jeton, même audience, même utilisateur. » |
+
+> [!tip] La phrase qui tue
+> **« Ne fais pas circuler ton jeton — échange-le : à chaque changement d'audience, un nouveau jeton, des droits réduits, et un `act` qui garde la trace de qui agit. »**
+
+---
+
 ## Voir aussi
 
 - [[access_token]] — le jeton échangé, et la question de son audience.

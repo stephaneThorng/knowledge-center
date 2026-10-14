@@ -377,6 +377,25 @@ Host: auth.example.com
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« C'est quoi le step-up ? »** | « Exiger un niveau d'authentification **supérieur** au moment de l'action sensible — pas à la connexion. » |
+| **« Différence `acr_values` / `acr` / `amr` ? »** | « `acr_values` = la **demande** ; `acr` = le niveau **atteint** ; `amr` = les **méthodes** utilisées. » |
+| **« `acr` est-il une autorisation ? »** | « **Non** : il décrit **comment** tu t'es authentifié, jamais **ce que tu as le droit de faire**. » |
+| **« Que doit vérifier le client ? »** | « Signature, puis **`acr`** conforme, **`amr`** attendu, et **`auth_time`** assez récent. Un seul échec → **rejet**. » |
+| **« `acr_values` est-il contraignant ? »** | « **Non** : c'est un claim **volontaire**. Pour une exigence **contractuelle**, utiliser `claims` + `essential: true`. » |
+| **« `auth_time` ou `iat` ? »** | « `auth_time` = quand l'**utilisateur** s'est authentifié ; `iat` = quand le **jeton** a été émis. » |
+
+> [!tip] La phrase qui tue
+> **« On demande avec `acr_values`, on vérifie avec `acr` et `amr` — demander ne suffit jamais, il faut contrôler. »**
+
+---
+
 ## Voir aussi
 
 - [[sso_session_and_consent]] — le niveau d'authentification est **monotone** (il monte, ne descend jamais).
