@@ -43,8 +43,9 @@ sources: [SAML 2.0 Core, SAML 2.0 Bindings, SAML 2.0 Profiles]
 2. **[[saml_message_examples]]** — **lire une trame** : décoder un `AuthnRequest` et une `Response`, et suivre la grille de diagnostic.
 3. **[[saml_nameid]]** — **l'identifiant** : politique de format, mapping, et la règle « l'IdP écrit, le SP range ».
 4. **[[saml_attribute_mapping]]** — **les attributs** : émission, surcharge par SP, autorisation.
-5. **[[saml_vs_oidc]]** — le comparatif : pourquoi OIDC a gagné pour le neuf, et pourquoi SAML survit.
-6. *(à venir, si besoin)* — Single Logout, bindings et métadonnées détaillés.
+5. **[[saml_slo]]** — **la déconnexion propagée** : `LogoutRequest`/`LogoutResponse`, back-channel, `SessionIndex`.
+6. **[[saml_vs_oidc]]** — le comparatif : pourquoi OIDC a gagné pour le neuf, et pourquoi SAML survit.
+7. *(à venir, si besoin)* — Bindings et métadonnées en détail.
 
 ---
 
@@ -56,6 +57,7 @@ sources: [SAML 2.0 Core, SAML 2.0 Bindings, SAML 2.0 Profiles]
 | [[saml_message_examples]] | Lire une capture réseau : emballages, `AuthnRequest`/`Response` décodés, grille de diagnostic. |
 | [[saml_nameid]] | Le `NameID` : négociation du format, mapping par format, et qui décide de la valeur. |
 | [[saml_attribute_mapping]] | Les attributs : deux niveaux d'émission côté IdP, la liste vide `[]`, et l'autorisation. |
+| [[saml_slo]] | Le Single Logout : la déconnexion propagée à tous les SP, et ses pièges. |
 | [[saml_vs_oidc]] | Deux réponses au même problème : fédérer une identité entre organisations. |
 
 ---

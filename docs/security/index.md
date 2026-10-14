@@ -42,7 +42,7 @@ sources: [NIST SP 800-63, NIST SP 800-207, OASIS SAML 2.0, OpenID Connect Core 1
 ### 🏛️ `saml/` — Le protocole historique
 
 > [!tip] En clair
-> **6 notes.** SAML 2.0 : le protocole de fédération le plus déployé en entreprise, son fonctionnement, ses attaques, la **lecture de trame** (diagnostic), le **NameID** (politique et mapping), les **attributs** (émission et autorisation), et sa comparaison avec OIDC.
+> **7 notes.** SAML 2.0 : le protocole de fédération le plus déployé en entreprise, son fonctionnement, ses attaques, la **lecture de trame** (diagnostic), le **NameID** (politique et mapping), les **attributs** (émission et autorisation), le **Single Logout** (déconnexion propagée), et sa comparaison avec OIDC.
 
 **Pourquoi c'est utile** : les grandes organisations l'ont massivement déployé, et on ne remplace pas ce qui fonctionne — on **gravite autour**.
 
@@ -126,7 +126,6 @@ sources: [NIST SP 800-63, NIST SP 800-207, OASIS SAML 2.0, OpenID Connect Core 1
 - WebAuthn / passkeys
 
 **Dans `saml/`** :
-- Single Logout (SLO)
 - Bindings et métadonnées en détail
 
 **Dans `iam/`** — familles entières :

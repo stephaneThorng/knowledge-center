@@ -1,5 +1,5 @@
 ---
-title: Les attributs SAML : émission et mapping
+title: "Les attributs SAML : émission et mapping"
 aliases: [AttributeStatement, Attribute Mapper, Attributs SAML, Mapping attributs, RequestedAttribute, memberOf, Attributs IdP, Surcharge par SP]
 tags: [saml, federation, sso, attributs, mapper, mapping, autorisation, assertion]
 domaine: securite/saml

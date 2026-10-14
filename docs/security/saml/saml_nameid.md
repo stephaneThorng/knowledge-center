@@ -1,5 +1,5 @@
 ---
-title: Le NameID : politique et mapping
+title: "Le NameID : politique et mapping"
 aliases: [NameID, NameIDPolicy, NameID Mapper, Format NameID, unspecified, persistent, transient, emailAddress, Identifiant fédéré, Attribute Mapper]
 tags: [saml, federation, sso, nameid, mapper, identite, assertion, mapping]
 domaine: securite/saml
