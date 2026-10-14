@@ -249,6 +249,25 @@ Appel de l'API : `GET https://api.example.com/contacts` avec l'en-tête `Authori
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« OAuth, c'est de l'authentification ? »** | « **Non** — c'est un cadre d'**autorisation**. Il dit **ce que** le client peut faire, jamais **qui** est l'utilisateur. Pour l'identité, c'est [[openid_connect]]. » |
+| **« Quels sont les 4 rôles ? »** | « **Resource Owner** (l'utilisateur), **Client** (l'app), **Authorization Server** (le guichet qui émet les jetons), **Resource Server** (l'API qui les valide). » |
+| **« Différence client confidentiel / public ? »** | « Le **confidentiel** peut garder un secret (il a un serveur) ; le **public** (SPA, mobile) ne peut rien garder → **PKCE obligatoire** pour lui. » |
+| **« Quels grants existent encore ? »** | « **Authorization Code** (avec utilisateur), **Client Credentials** (machine-to-machine), **Device** (sans navigateur), **Refresh Token**. Implicit et Password sont **bannis**. » |
+| **« C'est quoi le scope ? »** | « Le **périmètre** du badge : ce qu'il autorise précisément. Principe de **moindre privilège** — le RS vérifie le scope du jeton, jamais le rôle supposé du client. » |
+| **« Pourquoi OAuth 2.1 ? »** | « Ce n'est pas un nouveau protocole : c'est **OAuth 2.0 + les bonnes pratiques** (RFC 9700). Il supprime implicit et password, et rend **PKCE obligatoire** pour les clients publics. » |
+
+> [!tip] La phrase qui tue
+> **« OAuth dit ce que tu peux faire, jamais qui tu es : le badge s'adresse à l'API, la carte d'identité à l'application. »**
+
+---
+
 ## Voir aussi
 - [[index]] — point d'entrée de la thématique sécurité/OIDC.
 - [[openid_connect]] — couche d'authentification au-dessus d'OAuth 2.0.

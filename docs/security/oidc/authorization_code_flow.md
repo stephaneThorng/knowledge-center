@@ -322,6 +322,25 @@ Application web `app.example.com` avec un IdP Keycloak sur `auth.example.com`.
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« Pourquoi deux appels au lieu d'un ? »** | « Parce que ce qui circule dans le navigateur (le `code`) est **sans valeur seul** : l'échange contre les jetons se fait sur le **back-channel** TLS authentifié. » |
+| **« C'est quoi les deux legs ? »** | « **Front-channel** (navigateur) : `/authorize` → renvoie un `code`. **Back-channel** (serveur→serveur) : `/token` → renvoie les jetons. » |
+| **« Pourquoi PKCE ? »** | « Un client public ne peut pas garder de secret. PKCE lie le `code` au `code_verifier` : un code intercepté est **inexploitable** sans lui. » |
+| **« À quoi sert le `state` ? »** | « Anti-**CSRF / injection de code** : on le pose à l'aller, on exige de le retrouver au retour. **PKCE ne couvre pas ce vecteur.** » |
+| **« Pourquoi le code expire-t-il si vite ? »** | « Usage unique, TTL 30-60 s : ça réduit la fenêtre d'exploitation si le code fuite (historique, log proxy). Un rejeu détecté révoque les jetons. » |
+| **« Que vérifie-t-on à l'arrivée ? »** | « `state`, puis sur l'`id_token` : signature (JWKS), `iss`, `aud` = `client_id`, `exp`, et `nonce`. » |
+
+> [!tip] La phrase qui tue
+> **« On récupère un ticket sans valeur dans le navigateur, on l'échange contre le vrai badge par la porte de service : le secret ne traverse jamais le canal public. »**
+
+---
+
 ## Voir aussi
 
 - [[oauth2]] — le protocole-cadre et ses quatre grants fondateurs.

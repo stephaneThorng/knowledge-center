@@ -219,6 +219,23 @@ Rien n'est chiffré : `sub` et `email` seraient en clair dans un log. Les [[clie
 >
 > **Conséquence pratique :** on n'y met **jamais** de secret, et on vérifie **toujours** le cachet avant de lire.
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« Un JWT est-il chiffré ? »** | « **Non** : le payload est en **base64url**, réversible **sans clé**. La signature garantit l'**intégrité**, jamais la **confidentialité**. » |
+| **« JWS ou JWE ? »** | « **JWS** = signé (lisible, non modifiable) — c'est le cas normal. **JWE** = chiffré (illisible, 5 segments) — rare. » |
+| **« Que vaut un JWT sans vérification de signature ? »** | « **Rien.** Le contenu seul ne prouve rien : n'importe qui peut fabriquer un JWT. » |
+| **« HS256 ou RS256 ? »** | « **RS256/ES256** (asymétrique) : l'émetteur signe avec sa clé privée, tous vérifient avec la clé publique. **HS256** est inadapté à OIDC (le vérificateur pourrait forger). » |
+| **« Faut-il croire le champ `alg` du header ? »** | « **Jamais.** On impose sa propre liste blanche — sinon `alg: none` ou la confusion RS256→HS256. » |
+| **« Pourquoi les JWT ont-ils une durée courte ? »** | « Ils sont **auto-porteurs**, donc **non révocables**. D'où `exp` court + `refresh_token` révocable. Et comme ils sont lisibles : **jamais de secret dedans**. » |
+
+> [!tip] La phrase qui tue
+> **« Un JWT est une enveloppe signée, pas un coffre-fort : lisible par tous, modifiable par personne, et jamais de secret à l'intérieur. »**
+
 ## Voir aussi
 - [[discovery_and_jwks]] — clé publique, `kid`, rotation.
 - [[id_token]] et [[pkce]] — le JWT normalisé d'OIDC, l'anti-vol de code.

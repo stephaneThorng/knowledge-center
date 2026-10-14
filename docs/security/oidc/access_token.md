@@ -226,6 +226,25 @@ L'API vérifie la signature (JWKS de l'issuer), puis `aud == https://api.example
 
 ---
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« Access token, en une phrase ? »** | « La **preuve d'autorisation** présentée à l'API : il dit **ce que le client peut faire**, jamais **qui** est l'utilisateur. » |
+| **« Opaque ou JWT ? »** | « **Opaque** : l'API doit appeler `/introspect`, mais **révocation immédiate**. **JWT** : vérifiable hors-ligne via JWKS, mais **non révocable avant `exp`**. » |
+| **« Que vérifie l'API ? »** | « Signature (ou introspection), `exp`/`nbf`, **`aud`** (le jeton est-il pour **cette** API ?), `iss`, et le **`scope`** de l'opération demandée. » |
+| **« C'est quoi Bearer ? »** | « « Celui qui le montre passe » : aucune autre preuve. Donc un jeton volé est utilisable → **jamais dans une URL**, uniquement l'en-tête `Authorization`. » |
+| **« Comment se protéger du vol ? »** | « Le rendre **sender-constrained** : **mTLS** (lié au certificat) ou **DPoP** (lié à une clé privée signant chaque requête). » |
+| **« Pourquoi des durées courtes ? »** | « Un access token volé reste utilisable jusqu'à `exp` : 5-15 min + un `refresh_token` révocable. » |
+
+> [!tip] La phrase qui tue
+> **« L'access token est un badge : il dit ce que tu peux faire, pas qui tu es — et comme celui qui le montre passe, on ne le met jamais dans une URL. »**
+
+---
+
 ## Voir aussi
 
 - [[oauth2]] — le cadre qui définit l'access token et ses grants.

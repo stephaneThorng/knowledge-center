@@ -234,6 +234,23 @@ Avec `alg` et `kid`, le RP sait quelle clé demander à `jwks_uri` ; avec `aud`,
 >
 > **Et le réflexe vital :** une carte ne vaut **que si on vérifie le cachet** (la signature). Contenu sans vérification = zéro.
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« ID Token ou access token ? »** | « L'**ID Token** prouve l'**identité** au **client** (`aud` = `client_id`). L'**access token** autorise l'accès à une **API**. On ne les échange **jamais**. » |
+| **« Pourquoi l'ID Token est un JWT ? »** | « Pour être **vérifiable hors-ligne** par le RP : signature asymétrique, clés publiques récupérées via JWKS. » |
+| **« Quels claims sont obligatoires ? »** | « `iss`, `sub`, `aud`, `exp`, `iat` — et `nonce` si le jeton vient de l'authorization endpoint. » |
+| **« C'est quoi `sub` et pourquoi pas l'email ? »** | « `sub` = identifiant **stable** et local à l'OP ; l'email peut **changer** et n'est fiable qu'avec `email_verified`. » |
+| **« Que doit vérifier le RP ? »** | « **Signature**, `alg` en liste blanche, `iss`, `aud` (+ `azp` si multi-audience), `exp`/`iat`, `nonce`, et `at_hash` si présent. » |
+| **« Un ID Token peut-il servir à appeler une API ? »** | « **Jamais** : il n'est pas destiné à l'API et ne porte aucune permission. L'API n'accepte que des access tokens. » |
+
+> [!tip] La phrase qui tue
+> **« L'ID Token est une carte d'identité pour l'application, l'access token un badge pour l'API — et une carte ne vaut que si on vérifie le cachet. »**
+
 ## Voir aussi
 - [[openid_connect]] — le protocole qui définit et transporte l'ID Token.
 - [[jwt]] — format, signature JWS et claims sous-jacents.

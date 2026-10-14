@@ -217,6 +217,23 @@ Le RP vérifie la signature via la JWKS, contrôle `iss`, `aud`, `exp` et le `no
 >
 > **Pourquoi on en a besoin :** parce qu'un badge dit *ce que tu peux faire* — jamais *qui tu es*.
 
+## 🗣️ Les questions qu'on te posera
+
+> [!tip] En clair
+> Les questions classiques sur le sujet, et la réponse courte qui résume l'essentiel.
+
+| Si on te demande… | Réponds… |
+|---|---|
+| **« OIDC, en une phrase ? »** | « Une **couche d'authentification posée sur OAuth 2.0** : elle ajoute l'`id_token` signé, qui prouve **qui** s'est authentifié. » |
+| **« Qu'est-ce qu'OIDC ajoute à OAuth ? »** | « Le scope **`openid`**, l'**ID Token**, l'endpoint **`/userinfo`**, la **discovery** (`.well-known`), le **`nonce`**, et les règles de **logout**. » |
+| **« OP et RP, c'est quoi ? »** | « **OpenID Provider** = le guichet qui **sait qui tu es** (ex-AS d'OAuth). **Relying Party** = l'application qui **veut savoir qui tu es**. » |
+| **« `sub` global ou pairwise ? »** | « **Global** : même `sub` chez tous les RP → corrélable. **Pairwise** : `sub` dérivé par RP → deux RP ne peuvent pas croiser l'utilisateur. » |
+| **« Pourquoi OIDC plutôt qu'une API « me » maison ? »** | « **Interopérabilité** (un contrat unique) + **vérifiabilité** (identité portée par une **signature asymétrique**, pas par un appel implicite). » |
+| **« Que vérifie-t-on dans l'ID Token ? »** | « Signature (JWKS), `iss`, `aud` = `client_id`, `exp`/`iat`, et le **`nonce`**. » |
+
+> [!tip] La phrase qui tue
+> **« OAuth donne le badge, OIDC ajoute la carte d'identité par-dessus : un badge ne prouve jamais qui tu es. »**
+
 ## Voir aussi
 
 - [[oauth2]] — le socle d'autorisation sur lequel OIDC est construit.
