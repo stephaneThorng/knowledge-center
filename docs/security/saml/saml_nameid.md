@@ -1,6 +1,6 @@
 ---
 title: "Le NameID : politique et mapping"
-aliases: [NameID, NameIDPolicy, NameID Mapper, Format NameID, unspecified, persistent, transient, emailAddress, Identifiant fédéré, Attribute Mapper]
+aliases: [NameID, NameIDPolicy, NameID Mapper, Format NameID, unspecified, persistent, transient, emailAddress, Identifiant fédéré]
 tags: [saml, federation, sso, nameid, mapper, identite, assertion, mapping]
 domaine: securite/saml
 niveau: intermediaire

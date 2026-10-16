@@ -41,7 +41,7 @@ sources: [SAML 2.0 Core, SAML 2.0 Bindings, SAML 2.0 Profiles, SAML 2.0 Metadata
 | **front-channel** | le message passe **par le navigateur** |
 | **back-channel** | le message passe **serveur à serveur** (fiable) |
 
-Voir aussi : [[oidc/logout|logout OIDC]] (le même problème résolu côté OIDC) et [[sso_session_and_consent]].
+Voir aussi : [[security/oidc/logout|logout OIDC]] (le même problème résolu côté OIDC) et [[sso_session_and_consent]].
 
 ---
 
@@ -456,7 +456,7 @@ L'IdP appelle **directement** l'endpoint SLO de chaque SP. **Aucun navigateur**,
 
 ## Voir aussi
 
-- [[oidc/logout|Déconnexion OIDC]] — le même problème, résolu côté OIDC (`sid`, `logout_token`, back-channel).
+- [[security/oidc/logout|Déconnexion OIDC]] — le même problème, résolu côté OIDC (`sid`, `logout_token`, back-channel).
 - [[saml2]] — le protocole : acteurs, assertion, bindings, Web SSO.
 - [[saml_message_examples]] — décoder les messages, vérifier la signature, la grille de diagnostic.
 - [[saml_nameid]] — le `NameID` dans le `LogoutRequest`, et la cohérence des formats.

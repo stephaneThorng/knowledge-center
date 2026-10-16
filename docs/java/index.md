@@ -1,6 +1,6 @@
 ---
 title: Java
-aliases: [Index Java, Java index, JVM, Java avance]
+aliases: [Index Java, Java index, Java avance]
 tags: [java, jvm, moc, index, navigation, concurrence]
 domaine: java
 niveau: avance

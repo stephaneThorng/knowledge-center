@@ -1,6 +1,6 @@
 ---
-title: "Java Memory Model : heap, stack et happens-before"
-aliases: [Java Memory Model, JMM, Modèle mémoire Java, happens-before, Heap, Stack, visibilité, safe publication, réordonnancement]
+title: "JMM en profondeur : happens-before et les 3 remèdes"
+aliases: [Java Memory Model, JMM, Modèle mémoire Java, happens-before, safe publication, réordonnancement, volatile, synchronized, AtomicInteger]
 tags: [java, jvm, memoire, concurrence, theorie, visibilite]
 domaine: java
 niveau: avance
@@ -9,7 +9,7 @@ cree: 2026-10-14
 sources: [JLS §17 Threads and Locks, JSR-133, Java Concurrency in Practice]
 ---
 
-# Java Memory Model : heap, stack et happens-before
+# JMM en profondeur : happens-before et les 3 remèdes
 
 > [!abstract] Ancre
 > Le **Java Memory Model** (JMM) est le **contrat** qui dit *quand une écriture faite par un thread devient visible pour un autre*. C'est lui qui explique pourquoi un programme concurrent « correct » peut se comporter de façon absurde — et pourquoi `volatile` et `synchronized` existent.
@@ -373,6 +373,15 @@ Résultat observé : 17 431  (les autres sont PERDUES)
 > **« En Java, écrire dans une variable ne la partage pas : chaque thread peut en garder une copie — le JMM dit seulement quand cette copie doit être rafraîchie, et sans `happens-before` il n'y a aucune garantie. »**
 
 ---
+
+---
+
+## 🔗 Si tu débutes sur le sujet
+
+> [!tip] En clair
+> Cette note entre dans le **détail technique**. Si tu veux d'abord **la vue d'ensemble** — pourquoi le problème existe, les deux problèmes à ne jamais confondre, et la carte des notes — commence ici :
+>
+> ➡️ **[[java_memoire_partagee|Mémoire Java : ce qui est partagé entre threads]]**
 
 ## Voir aussi
 

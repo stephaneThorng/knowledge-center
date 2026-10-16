@@ -22,9 +22,9 @@ sources: [NIST SP 800-63, NIST SP 800-207, OASIS SAML 2.0, OpenID Connect Core 1
 
 | Si tu veux… | Va dans |
 |---|---|
-| comprendre l'authentification **moderne** (OAuth, OIDC, jetons, PKCE…) | **[[oidc/index]]** → `oidc/` |
-| comprendre l'**ancien** protocole, encore partout en entreprise | **[[saml/index]]** → `saml/` |
-| comprendre la **gestion des identités** au sens large (rôles, comptes, cycle de vie) | **[[iam/index]]** → `iam/` |
+| comprendre l'authentification **moderne** (OAuth, OIDC, jetons, PKCE…) | **[[security/oidc/index]]** → `oidc/` |
+| comprendre l'**ancien** protocole, encore partout en entreprise | **[[security/saml/index]]** → `saml/` |
+| comprendre la **gestion des identités** au sens large (rôles, comptes, cycle de vie) | **[[security/iam/index]]** → `iam/` |
 
 ---
 
@@ -37,7 +37,7 @@ sources: [NIST SP 800-63, NIST SP 800-207, OASIS SAML 2.0, OpenID Connect Core 1
 
 **C'est le dossier le plus complet** — il couvre un protocole de bout en bout, des fondations jusqu'aux usages avancés ([[mtls]], [[dpop]], [[fapi]], [[token_exchange]]).
 
-➡️ **Point d'entrée : [[oidc/index]]**
+➡️ **Point d'entrée : [[security/oidc/index]]**
 
 ### 🏛️ `saml/` — Le protocole historique
 
@@ -46,7 +46,7 @@ sources: [NIST SP 800-63, NIST SP 800-207, OASIS SAML 2.0, OpenID Connect Core 1
 
 **Pourquoi c'est utile** : les grandes organisations l'ont massivement déployé, et on ne remplace pas ce qui fonctionne — on **gravite autour**.
 
-➡️ **Point d'entrée : [[saml/index]]**
+➡️ **Point d'entrée : [[security/saml/index]]**
 
 ### 👥 `iam/` — Gestion des identités et des accès
 
@@ -55,7 +55,7 @@ sources: [NIST SP 800-63, NIST SP 800-207, OASIS SAML 2.0, OpenID Connect Core 1
 
 **C'est le dossier à faire grandir** : il couvre des familles entières (fédération, cycle de vie, architecture) encore incomplètes.
 
-➡️ **Point d'entrée : [[iam/index]]**
+➡️ **Point d'entrée : [[security/iam/index]]**
 
 ---
 
@@ -140,9 +140,9 @@ sources: [NIST SP 800-63, NIST SP 800-207, OASIS SAML 2.0, OpenID Connect Core 1
 
 ## Voir aussi
 
-- [[oidc/index]] — carte du dossier `oidc/` (protocoles modernes).
-- [[saml/index]] — carte du dossier `saml/` (protocole historique).
-- [[iam/index]] — carte du dossier `iam/` (domaine complet).
+- [[security/oidc/index]] — carte du dossier `oidc/` (protocoles modernes).
+- [[security/saml/index]] — carte du dossier `saml/` (protocole historique).
+- [[security/iam/index]] — carte du dossier `iam/` (domaine complet).
 
 ## Références
 
